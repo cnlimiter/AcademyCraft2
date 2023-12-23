@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -58,7 +58,7 @@ public class CatEngine extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_153212_, BlockState p_153213_, BlockEntityType<T> p_153214_) {
-        return p_153212_.isClientSide() ? createTickerHelper(p_153214_, AcademyBlockEntities.CAT_ENGINE.get(), CatEngineBlockEntity::tickAnim) : null;
+        return p_153212_.isClientSide() ? createTickerHelper(p_153214_, ModBlockEntities.CAT_ENGINE.get(), CatEngineBlockEntity::tickAnim) : null;
     }
 
 

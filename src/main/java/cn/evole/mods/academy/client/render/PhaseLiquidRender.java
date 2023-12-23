@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.client.render;
 
+import cn.evole.mods.academy.api.client.render.IBESR;
 import cn.evole.mods.academy.common.blockentity.PhaseLiquidBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -9,7 +10,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
 import org.joml.Matrix4f;
 
-public class PhaseLiquidRender implements BlockEntityRenderer<PhaseLiquidBlockEntity> {
+public class PhaseLiquidRender implements IBESR<PhaseLiquidBlockEntity> {
 
     public PhaseLiquidRender(BlockEntityRendererProvider.Context ctx) {
 

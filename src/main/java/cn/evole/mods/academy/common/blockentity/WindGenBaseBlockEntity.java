@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.common.AcademyCapability;
 import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
@@ -20,7 +20,7 @@ public class WindGenBaseBlockEntity extends AcademyContainerBlockEntity {
     private boolean validMiddle = false;
 
     public WindGenBaseBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(AcademyBlockEntities.WINDGEN_BASE.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.WINDGEN_BASE.get(), p_155229_, p_155230_);
     }
 
 

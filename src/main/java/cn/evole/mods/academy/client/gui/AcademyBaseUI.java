@@ -8,6 +8,7 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
@@ -75,7 +76,7 @@ public abstract class AcademyBaseUI<T extends AcademyMenu> extends AbstractConta
     }
 
     @Override
-    public void renderBg(PoseStack stack, float p_97788_, int p_97789_, int p_97790_) {
+    public void renderBg(GuiGraphics stack, float p_97788_, int p_97789_, int p_97790_) {
         RenderSystem.setShaderColor(1, 1, 1, 0.7f);
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
@@ -122,14 +123,14 @@ public abstract class AcademyBaseUI<T extends AcademyMenu> extends AbstractConta
     }
 
 
-    public abstract void renderBackground(PoseStack stack, float p_97788_, int mouseX, int mouseY);
+    public abstract void renderBackground(GuiGraphics stack, float p_97788_, int mouseX, int mouseY);
 
     @Override
-    public void render(PoseStack stack, int mouseX, int mouseY, float p_97798_) {
+    public void render(GuiGraphics stack, int mouseX, int mouseY, float p_97798_) {
         RenderSystem.setShaderColor(1, 1, 1, 1);
         if (!this.wireless)
             super.render(stack, mouseX, mouseY, p_97798_);
-        super.renderBackground(stack);
+        super.renderBackground(stack, mouseX, mouseY, p_97798_);
 
         this.renderBg(stack, p_97798_, mouseX, mouseY);
         RenderSystem.setShaderColor(1, 1, 1, 1);

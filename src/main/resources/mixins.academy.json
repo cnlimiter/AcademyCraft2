@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "cn.evole.mods.academy.init.mixins",
+  "refmap": "mixins.academy.refmap.json",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_17",
+  "injectors": {
+    "maxShiftBy": 5
+  },
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "server": [
+  ]
+}

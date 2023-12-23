@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.common.AcademyCapability;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import net.minecraft.core.BlockPos;
@@ -10,8 +10,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
+import net.neoforged.neoforge.common.capabilities.Capability;
+import net.neoforged.neoforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,7 +24,7 @@ public class CatEngineBlockEntity extends BlockEntity {
     public float rH = 0;
 
     public CatEngineBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(AcademyBlockEntities.CAT_ENGINE.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.CAT_ENGINE, p_155229_, p_155230_);
     }
 
     public static void tickAnim(Level level, BlockPos blockPos, BlockState blockState, CatEngineBlockEntity e) {

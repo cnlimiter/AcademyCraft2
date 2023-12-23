@@ -1,12 +1,13 @@
 package cn.evole.mods.academy.client.render;
 
+import cn.evole.mods.academy.api.client.render.IBESR;
 import cn.evole.mods.academy.common.blockentity.WindGenFanBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-public class WindGenFanRender implements BlockEntityRenderer<WindGenFanBlockEntity> {
+public class WindGenFanRender implements IBESR<WindGenFanBlockEntity> {
 
     public WindGenFanRender(BlockEntityRendererProvider.Context ctx) {
     }

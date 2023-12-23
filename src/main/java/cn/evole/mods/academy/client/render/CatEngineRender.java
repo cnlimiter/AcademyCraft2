@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.client.render;
 
+import cn.evole.mods.academy.api.client.render.IBESR;
 import cn.evole.mods.academy.client.model.CatEngineModel;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
 import cn.evole.mods.academy.constant.Const;
@@ -12,7 +13,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 
-public class CatEngineRender implements BlockEntityRenderer<CatEngineBlockEntity> {
+public class CatEngineRender implements IBESR<CatEngineBlockEntity> {
     private final CatEngineModel model;
 
     public CatEngineRender(BlockEntityRendererProvider.Context ctx) {

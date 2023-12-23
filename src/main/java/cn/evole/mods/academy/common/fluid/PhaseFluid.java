@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.fluid;
 
-import cn.evole.mods.academy.common.AcademyBlocks;
+import cn.evole.mods.academy.common.ModBlocks;
 import cn.evole.mods.academy.common.AcademyFluidTypes;
 import cn.evole.mods.academy.common.AcademyFluids;
 import cn.evole.mods.academy.common.AcademyItems;
@@ -86,7 +86,7 @@ public abstract class PhaseFluid extends FlowingFluid {
 
     @Override
     protected BlockState createLegacyBlock(FluidState p_76136_) {
-        return AcademyBlocks.PHASE_LIQUID.get().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_76136_)));
+        return ModBlocks.PHASE_LIQUID.get().defaultBlockState().setValue(LiquidBlock.LEVEL, Integer.valueOf(getLegacyLevel(p_76136_)));
     }
 
     @Override

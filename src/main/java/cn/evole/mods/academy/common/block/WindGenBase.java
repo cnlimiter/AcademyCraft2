@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyBlocks;
+import cn.evole.mods.academy.common.ModBlocks;
 import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.AcademyContainerBlockEntity;
 import cn.evole.mods.academy.common.blockentity.WindGenBaseBlockEntity;
@@ -79,7 +79,7 @@ public class WindGenBase extends BaseEntityBlock {
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState p_60569_, boolean p_60570_) {
-        Block subBlock = AcademyBlocks.WIND_GEN_BASE_SUB.get();
+        Block subBlock = ModBlocks.WIND_GEN_BASE_SUB.get();
         level.setBlock(pos.above(1), subBlock.defaultBlockState(), 19);
 
 

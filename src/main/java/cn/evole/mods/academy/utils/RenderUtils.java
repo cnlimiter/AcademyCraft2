@@ -1,11 +1,10 @@
 package cn.evole.mods.academy.utils;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiComponent;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.texture.OverlayTexture;
@@ -75,51 +74,49 @@ public class RenderUtils {
           */
     }
 
-    public static void renderCenter(int drawWidth, int drawHeight, int width, int height, PoseStack poseStack, ResourceLocation resource) {
+    public static void renderCenter(int drawWidth, int drawHeight, int width, int height, GuiGraphics poseStack, ResourceLocation resource) {
         renderCenter(0, 0, drawWidth, drawHeight, width, height, poseStack, resource);
     }
 
-    public static void renderCenter(int x, int y, int drawWidth, int drawHeight, int width, int height, PoseStack poseStack, ResourceLocation resource) {
+    public static void renderCenter(int x, int y, int drawWidth, int drawHeight, int width, int height, GuiGraphics poseStack, ResourceLocation resource) {
         int left = (width - drawWidth) / 2;
         int top = (height - drawHeight) / 2;
         render(drawWidth, drawHeight, left + x, top + y, poseStack, resource);
     }
 
-    public static void renderCenter(int x, int y, int drawWidth, int drawHeight,int drawTextureWidth, int drawTextureHeight, int width, int height, PoseStack poseStack, ResourceLocation resource, int textureStartX, int textureStartY, int textureWidth, int textureHeight) {
+    public static void renderCenter(int x, int y, int drawWidth, int drawHeight,int drawTextureWidth, int drawTextureHeight, int width, int height, GuiGraphics poseStack, ResourceLocation resource, int textureStartX, int textureStartY, int textureWidth, int textureHeight) {
         int left = (width - drawWidth) / 2;
         int top = (height - drawHeight) / 2;
         render(drawWidth, drawHeight,drawTextureWidth,drawTextureHeight, left + x, top + y, poseStack, resource, textureStartX, textureStartY, textureWidth, textureHeight);
     }
 
-    public static void renderCenterTop(int x, int y, int drawWidth, int drawHeight, int width, int top, PoseStack poseStack, ResourceLocation resource) {
+    public static void renderCenterTop(int x, int y, int drawWidth, int drawHeight, int width, int top, GuiGraphics poseStack, ResourceLocation resource) {
         int left = (width - drawWidth) / 2;
         render(drawWidth, drawHeight, left + x, top + y, poseStack, resource);
     }
 
 
-    public static void render(int drawWidth, int drawHeight, int left, int top, PoseStack poseStack, ResourceLocation resource) {
-        RenderSystem.setShaderTexture(0, resource);
+    public static void render(int drawWidth, int drawHeight, int left, int top, GuiGraphics guiGraphics, ResourceLocation resource) {
         //drawWidth和drawHeight名字反了，值没反
-        GuiComponent.blit(poseStack, left, top, 0, 0, 0, drawWidth, drawHeight, drawWidth, drawHeight);
+        guiGraphics.blit(resource, left, top, 0, 0, 0, drawWidth, drawHeight, drawWidth, drawHeight);
     }
 
-    public static void render(int drawWidth, int drawHeight,int drawTextureWidth, int drawTextureHeight, int left, int top, PoseStack poseStack, ResourceLocation resource, int textureStartX, int textureStartY, int textureWidth, int textureHeight) {
-        RenderSystem.setShaderTexture(0, resource);
-        GuiComponent.blit(poseStack, left, top, drawWidth, drawHeight, textureStartY, textureStartX, drawTextureWidth, drawTextureHeight, textureWidth, textureHeight);
+    public static void render(int drawWidth, int drawHeight,int drawTextureWidth, int drawTextureHeight, int left, int top, GuiGraphics guiGraphics, ResourceLocation resource, int textureStartX, int textureStartY, int textureWidth, int textureHeight) {
+        guiGraphics.blit(resource, left, top, drawWidth, drawHeight, textureStartY, textureStartX, drawTextureWidth, drawTextureHeight, textureWidth, textureHeight);
     }
 
-    public static void renderText(PoseStack stack, String text, int x, int y) {
+    public static void renderText(GuiGraphics stack, String text, int x, int y) {
         renderText(stack, text, x, y, Style.EMPTY);
     }
 
-    public static void renderText(PoseStack stack, String text, int x, int y, Style style) {
+    public static void renderText(GuiGraphics stack, String text, int x, int y, Style style) {
         MultiBufferSource.BufferSource source = MultiBufferSource.immediate(Tesselator.getInstance().getBuilder());
         ClientTooltipComponent.create(FormattedCharSequence.forward(text,
                         style))
                 .renderText(Minecraft.getInstance().font,
                         x,
                         y,
-                        stack.last().pose(),
+                        stack.pose().last().pose(),
                         source);
         source.endBatch();
     }

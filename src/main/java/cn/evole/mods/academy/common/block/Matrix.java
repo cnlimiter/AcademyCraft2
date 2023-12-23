@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyBlocks;
+import cn.evole.mods.academy.common.ModBlocks;
 import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.MatrixBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -59,7 +59,7 @@ public class Matrix extends BaseEntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState p_60569_, boolean p_60570_) {
         Direction direction = state.getValue(HorizontalDirectionalBlock.FACING).getOpposite();
-        Block subBlock = AcademyBlocks.MATRIX_SUB.get();
+        Block subBlock = ModBlocks.MATRIX_SUB.get();
         switch (direction) {
             case NORTH -> {
                 level.setBlock(pos.south(1), subBlock.defaultBlockState(), 19);

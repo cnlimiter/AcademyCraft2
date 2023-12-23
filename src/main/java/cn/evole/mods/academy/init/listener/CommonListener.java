@@ -3,7 +3,7 @@ package cn.evole.mods.academy.init.listener;
 import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
-import cn.evole.mods.academy.common.AcademyBlocks;
+import cn.evole.mods.academy.common.ModBlocks;
 import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.AcademyMenus;
 import cn.evole.mods.academy.common.block.*;
@@ -104,7 +104,7 @@ public class CommonListener {
                                             || item.get().getDescriptionId().contains("wingen_base_sub")
                                             || item.get().getDescriptionId().contains("matrix_sub"))
                             ).forEach(item -> output.accept(item.get()));
-                            AcademyBlocks.BLOCKS.getEntries().stream().filter(block ->
+                            ModBlocks.BLOCKS.getEntries().stream().filter(block ->
                                     !(block.get() instanceof DevNormalSubBlock)
                                             && !(block.get() instanceof DevAdvancedSubBlock)
                                             && !(block.get() instanceof MatrixSubBlock)

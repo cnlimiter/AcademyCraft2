@@ -81,12 +81,12 @@ public class Debug {
         logger.info(msg);
     }
 
-    public static void logFormat(String format, Object... params) {
+    public static void log(String format, Object... params) {
         log(String.format(format, params));
     }
 
     public static void error(Throwable ex) {
-        logger.error(ex);
+        logger.error(ex.getLocalizedMessage());
     }
 
     public static void error(String msg, Throwable ex) {
@@ -101,7 +101,11 @@ public class Debug {
         logger.warn(msg);
     }
 
-    public static void warnFormat(String msg, Object ...pars) {
+    public static void warn(String msg, Throwable ex) {
+        logger.warn(msg, ex);
+    }
+
+    public static void warn(String msg, Object ...pars) {
         warn(String.format(msg, pars));
     }
 

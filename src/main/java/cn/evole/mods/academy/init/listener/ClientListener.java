@@ -4,7 +4,7 @@ import cn.evole.mods.academy.client.model.CatEngineModel;
 import cn.evole.mods.academy.client.render.CatEngineRender;
 import cn.evole.mods.academy.client.render.PhaseLiquidRender;
 import cn.evole.mods.academy.client.render.WindGenFanRender;
-import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.constant.Const;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -42,9 +42,9 @@ public class ClientListener {
     //将所有的生物的渲染信息写在这个函数里，有几个写几个
     @SubscribeEvent
     public static void onRegisterRenderer(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerBlockEntityRenderer(AcademyBlockEntities.CAT_ENGINE.get(), CatEngineRender::new);
-        event.registerBlockEntityRenderer(AcademyBlockEntities.PHASE_LIQUID.get(), PhaseLiquidRender::new);
-        event.registerBlockEntityRenderer(AcademyBlockEntities.WINDGEN_FAN.get(), WindGenFanRender::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.CAT_ENGINE.get(), CatEngineRender::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.PHASE_LIQUID.get(), PhaseLiquidRender::new);
+        event.registerBlockEntityRenderer(ModBlockEntities.WINDGEN_FAN.get(), WindGenFanRender::new);
     }
 
 
