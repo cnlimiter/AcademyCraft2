@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.api.common.fluid;
+package cn.evole.mods.academy.api.common;
 
 import cn.evole.mods.academy.api.interfaces.ICustomReg;
 import cn.evole.mods.academy.api.interfaces.IRegListener;

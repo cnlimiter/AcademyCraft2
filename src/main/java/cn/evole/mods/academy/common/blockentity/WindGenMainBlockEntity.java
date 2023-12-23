@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class WindGenMainBlockEntity extends AcademyContainerBlockEntity {
     public WindGenMainBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.WINDGEN_MAIN.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.WINDGEN_MAIN, p_155229_, p_155230_);
     }
 
     @Override
@@ -32,21 +32,21 @@ public class WindGenMainBlockEntity extends AcademyContainerBlockEntity {
 
     private void checkFan(WindGenMain block, Level level, BlockPos east, Direction facing) {
         BlockState state = level.getBlockState(east);
-        if (!getItems().isEmpty() && getItems().get(0).is(ModItems.WINDGEN_FAN.get())) {
-            if (!state.is(Blocks.AIR) && state.is(ModBlocks.WINDGEN_FAN.get())) {
+        if (!getItems().isEmpty() && getItems().get(0).is(ModItems.WINDGEN_FAN)) {
+            if (!state.is(Blocks.AIR) && state.is(ModBlocks.WINDGEN_FAN)) {
                 // 这一方向有风扇
                 block.setValid(true);
                 return;
             } else if (state.is(Blocks.AIR)) {
                 // 这一方向是空的
-                level.setBlock(east, ModBlocks.WINDGEN_FAN.get()
+                level.setBlock(east, ModBlocks.WINDGEN_FAN
                         .defaultBlockState()
                         .setValue(WindGenPillar.FACING, facing), 19);
                 block.setValid(true);
                 return;
             }
         } else {
-            if (!state.is(Blocks.AIR) && state.is(ModBlocks.WINDGEN_FAN.get())) {
+            if (!state.is(Blocks.AIR) && state.is(ModBlocks.WINDGEN_FAN)) {
                 // 这一方向有风扇
                 level.destroyBlock(east, false);
             }
@@ -63,7 +63,7 @@ public class WindGenMainBlockEntity extends AcademyContainerBlockEntity {
 
     private void destroyFan(Level world, BlockPos east) {
         BlockState state = world.getBlockState(east);
-        if (state.is(ModBlocks.WINDGEN_FAN.get())) {
+        if (state.is(ModBlocks.WINDGEN_FAN)) {
             world.destroyBlock(east, false);
         }
     }

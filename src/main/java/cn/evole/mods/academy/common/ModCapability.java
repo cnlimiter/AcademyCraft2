@@ -6,7 +6,7 @@ import net.neoforged.neoforge.common.capabilities.CapabilityManager;
 import net.neoforged.neoforge.common.capabilities.CapabilityToken;
 
 
-public class AcademyCapability {
+public class ModCapability {
 
     public static Capability<IIFCapability> IF_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() {
         @Override

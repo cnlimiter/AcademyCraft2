@@ -9,7 +9,7 @@ public class WindGenFanBlockEntity extends BlockEntity {
     public float rH = 360;
 
     public WindGenFanBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.WINDGEN_FAN.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.WINDGEN_FAN, p_155229_, p_155230_);
     }
 
 }

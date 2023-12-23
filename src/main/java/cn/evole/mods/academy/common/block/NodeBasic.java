@@ -35,7 +35,7 @@ public class NodeBasic extends BaseEntityBlock {
 
 
     public NodeBasic() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
@@ -62,9 +62,9 @@ public class NodeBasic extends BaseEntityBlock {
 
 
 //    @Override
-//    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+//    public List<ItemStack> getDrops(BlockState p_60537_, LootParams.Builder p_60538_) {
 //        return new ArrayList<>() {{
-//            add(new ItemStack(ModItems.NODE_BASIC.get()));
+//            add(new ItemStack(ModBlocks..+.asItem()));
 //        }};
 //    }
 

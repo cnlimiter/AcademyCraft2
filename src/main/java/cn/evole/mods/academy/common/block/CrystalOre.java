@@ -1,20 +1,17 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CrystalOre extends Block {
 
     public CrystalOre() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
@@ -24,10 +21,9 @@ public class CrystalOre extends Block {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(ModItems.CRYSTAL_LOW.get()));
-        }};
+    public List<ItemStack> getDrops(BlockState p_60537_, LootParams.Builder p_60538_) {
+        return List.of(new ItemStack(this));
+
     }
 
 

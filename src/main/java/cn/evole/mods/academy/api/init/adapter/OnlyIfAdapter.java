@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.api.init.adapter;
 
-import cn.evole.mods.academy.constant.Debug;
 import cn.evole.mods.academy.api.annotations.OnlyIf;
+import cn.evole.mods.academy.constant.Debug;
 import cn.evole.mods.academy.utils.ReflectionUtils;
 import cn.evole.mods.academy.utils.json.JSONObject;
 import com.google.common.base.Suppliers;

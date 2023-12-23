@@ -1,7 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.AcademyContainerBlockEntity;
 import cn.evole.mods.academy.common.blockentity.WindGenBaseBlockEntity;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;
@@ -29,12 +28,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class WindGenBase extends BaseEntityBlock {
@@ -46,7 +43,7 @@ public class WindGenBase extends BaseEntityBlock {
 
 
     public WindGenBase() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .randomTicks()
@@ -71,15 +68,14 @@ public class WindGenBase extends BaseEntityBlock {
 
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(ModItems.WINDGEN_BASE.get()));
-        }};
+    public List<ItemStack> getDrops(BlockState p_60537_, LootParams.Builder p_60538_) {
+        return List.of(new ItemStack(this));
+
     }
 
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState p_60569_, boolean p_60570_) {
-        Block subBlock = ModBlocks.WIND_GEN_BASE_SUB.get();
+        Block subBlock = ModBlocks.WIND_GEN_BASE_SUB;
         level.setBlock(pos.above(1), subBlock.defaultBlockState(), 19);
 
 

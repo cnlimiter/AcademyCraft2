@@ -6,7 +6,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class NodeBasicBlockEntity extends BaseNodeBlockEntity {
     public NodeBasicBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.NODE_BASIC.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.NODE_BASIC, p_155229_, p_155230_);
     }
 
     @Override

@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class WindGenPillarBlockEntity extends BlockEntity {
     public WindGenPillarBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.WINDGEN_PILLAR.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.WINDGEN_PILLAR, p_155229_, p_155230_);
     }
 
 }

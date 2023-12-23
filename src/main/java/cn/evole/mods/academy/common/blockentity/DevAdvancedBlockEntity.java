@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class DevAdvancedBlockEntity extends BlockEntity {
     public DevAdvancedBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.DEV_ADVANCED.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.DEV_ADVANCED, p_155229_, p_155230_);
     }
 
 }

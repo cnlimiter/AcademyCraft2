@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.AcademyCapability;
+import cn.evole.mods.academy.common.ModCapability;
 import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import cn.evole.mods.academy.common.capability.IIFCapability;
@@ -9,8 +9,8 @@ import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.util.LazyOptional;
+import net.neoforged.neoforge.common.capabilities.Capability;
+import net.neoforged.neoforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +36,7 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
     public void tick() {
 
 
-        Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
+        Optional<?> optional = getCapability(ModCapability.IF_CAPABILITY).resolve();
         if (optional.isPresent()) {
             Object cap = optional.get();
             if (cap instanceof IIFCapability ifPower) {
@@ -52,8 +52,8 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
     private void updatePower(int i, int i1) {
         if (getMenu() != null) {
             ItemStack item = getMenu().container.getItem(i);
-            if (item.is(ModItems.ENERGY_UNIT.get()) || item.is(ModItems.DEVELOPER_PORTABLE.get())) {
-                Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
+            if (item.is(ModItems.ENERGY_UNIT) || item.is(ModItems.DEVELOPER_PORTABLE)) {
+                Optional<?> optional = getCapability(ModCapability.IF_CAPABILITY).resolve();
                 if (optional.isPresent()) {
                     Object cap = optional.get();
                     if (cap instanceof IIFCapability ifPower) {
@@ -67,7 +67,7 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == AcademyCapability.IF_CAPABILITY) {
+        if (cap == ModCapability.IF_CAPABILITY) {
             return LazyOptional.of(() ->
                     new IFCapabilityImpl(1)
             ).cast();

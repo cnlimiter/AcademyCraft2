@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common.blockentity;
 
+import cn.evole.mods.academy.common.ModCapability;
 import cn.evole.mods.academy.common.ModBlockEntities;
-import cn.evole.mods.academy.common.AcademyCapability;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -67,7 +67,7 @@ public class CatEngineBlockEntity extends BlockEntity {
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == AcademyCapability.IF_CAPABILITY) {
+        if (cap == ModCapability.IF_CAPABILITY) {
             return LazyOptional.of(() ->
                     new IFCapabilityImpl(114514)
             ).cast();

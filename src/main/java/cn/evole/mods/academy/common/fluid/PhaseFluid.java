@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.common.fluid;
 
+import cn.evole.mods.academy.common.ModFluidTypes;
+import cn.evole.mods.academy.common.ModFluids;
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.AcademyFluidTypes;
-import cn.evole.mods.academy.common.AcademyFluids;
 import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,12 +29,12 @@ public abstract class PhaseFluid extends FlowingFluid {
 
     @Override
     public Fluid getFlowing() {
-        return AcademyFluids.FLOWING_PHASE_LIQUID.get();
+        return ModFluids.FLOWING_PHASE_LIQUID.get();
     }
 
     @Override
     public Fluid getSource() {
-        return AcademyFluids.PHASE_LIQUID.get();
+        return ModFluids.PHASE_LIQUID.get();
     }
 
     @Override
@@ -91,12 +91,12 @@ public abstract class PhaseFluid extends FlowingFluid {
 
     @Override
     public boolean isSame(Fluid p_76122_) {
-        return p_76122_ == AcademyFluids.PHASE_LIQUID.get() || p_76122_ == AcademyFluids.FLOWING_PHASE_LIQUID.get();
+        return p_76122_ == ModFluids.PHASE_LIQUID.get() || p_76122_ == ModFluids.FLOWING_PHASE_LIQUID.get();
     }
 
     @Override
     public FluidType getFluidType() {
-        return AcademyFluidTypes.PHASE_LIQUID.get();
+        return ModFluidTypes.PHASE_LIQUID.get();
     }
 
 

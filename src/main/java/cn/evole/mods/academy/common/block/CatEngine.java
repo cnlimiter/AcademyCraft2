@@ -1,8 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
 import cn.evole.mods.academy.common.ModBlockEntities;
-import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -17,18 +15,15 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class CatEngine extends BaseEntityBlock {
     public CatEngine() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(20.0f)
@@ -66,9 +61,8 @@ public class CatEngine extends BaseEntityBlock {
 
     @Override
     public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(ModBlocks.CAT_ENGINE.asItem()));
-        }};    }
+        return List.of(new ItemStack(this));
+     }
 
 
 }

@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class DevNormalSubBlockEntity extends BlockEntity {
     public DevNormalSubBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.DEV_NORMAL_SUB.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.DEV_NORMAL_SUB, p_155229_, p_155230_);
     }
 
 

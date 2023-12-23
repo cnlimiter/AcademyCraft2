@@ -14,7 +14,7 @@ public abstract class BaseNodeMenu extends AcademyMenu {
         addAcademySlot(new Slot(container, 0, 44, 0) {
             @Override
             public boolean mayPlace(ItemStack item) {
-                return item.is(ModItems.ENERGY_UNIT.get());
+                return item.is(ModItems.ENERGY_UNIT);
             }
         });
 
@@ -22,7 +22,7 @@ public abstract class BaseNodeMenu extends AcademyMenu {
         addAcademySlot(new Slot(container, 1, 44, 70) {
             @Override
             public boolean mayPlace(ItemStack item) {
-                return item.is(ModItems.ENERGY_UNIT.get()) || item.is(ModItems.DEVELOPER_PORTABLE.get());
+                return item.is(ModItems.ENERGY_UNIT) || item.is(ModItems.DEVELOPER_PORTABLE);
             }
         });
     }

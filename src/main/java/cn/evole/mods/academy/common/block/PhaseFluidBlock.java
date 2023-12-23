@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyFluids;
+import cn.evole.mods.academy.common.ModFluids;
 import cn.evole.mods.academy.common.blockentity.PhaseLiquidBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.MenuProvider;
@@ -13,14 +13,13 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
 
 public class PhaseFluidBlock extends LiquidBlock implements EntityBlock {
     public PhaseFluidBlock() {
-        super(AcademyFluids.PHASE_LIQUID,
+        super(ModFluids.PHASE_LIQUID,
                 BlockBehaviour.Properties
-                        .of(Material.WATER)
+                        .of()
                         .noCollission()
                         .strength(100.0F)
                         .noLootTable()

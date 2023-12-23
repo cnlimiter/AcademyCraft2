@@ -1,11 +1,11 @@
 package cn.evole.mods.academy.api.init.adapter;
 
-import cn.evole.mods.academy.api.init.registry.RegistryMapping;
-import cn.evole.mods.academy.api.interfaces.*;
-import cn.evole.mods.academy.api.annotations.Reg;
 import cn.evole.mods.academy.api.annotations.OnlyIf;
+import cn.evole.mods.academy.api.annotations.Reg;
 import cn.evole.mods.academy.api.annotations.RegName;
 import cn.evole.mods.academy.api.annotations.TileRenderer;
+import cn.evole.mods.academy.api.init.registry.RegistryMapping;
+import cn.evole.mods.academy.api.interfaces.*;
 import cn.evole.mods.academy.constant.Debug;
 import cn.evole.mods.academy.utils.ReflectionUtils;
 import cn.evole.mods.academy.utils.ScanDataUtils;

@@ -1,7 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.DevAdvancedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,18 +14,16 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DevAdvanced extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
     public DevAdvanced() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(5.0f)
@@ -138,10 +135,9 @@ public class DevAdvanced extends BaseEntityBlock {
 
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(ModItems.DEV_ADVANCED.get()));
-        }};
+    public List<ItemStack> getDrops(BlockState p_60537_, LootParams.Builder p_60538_) {
+        return List.of(new ItemStack(this));
+
     }
 
     @Override

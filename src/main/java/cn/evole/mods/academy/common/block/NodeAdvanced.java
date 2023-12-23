@@ -1,6 +1,5 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -15,12 +14,10 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class NodeAdvanced extends Block {
@@ -31,7 +28,7 @@ public class NodeAdvanced extends Block {
 
 
     public NodeAdvanced() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
@@ -57,10 +54,9 @@ public class NodeAdvanced extends Block {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(ModItems.NODE_ADVANCED.get()));
-        }};
+    public List<ItemStack> getDrops(BlockState p_60537_, LootParams.Builder p_60538_) {
+        return List.of(new ItemStack(this));
+
     }
 
     @Override

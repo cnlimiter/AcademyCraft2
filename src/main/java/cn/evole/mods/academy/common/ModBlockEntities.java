@@ -5,17 +5,15 @@ import cn.evole.mods.academy.api.annotations.RegName;
 import cn.evole.mods.academy.api.annotations.TileRenderer;
 import cn.evole.mods.academy.api.init.registry.BlockApi;
 import cn.evole.mods.academy.client.render.CatEngineRender;
+import cn.evole.mods.academy.client.render.WindGenFanRender;
 import cn.evole.mods.academy.common.blockentity.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 @Reg
 public class ModBlockEntities {
 
-    @TileRenderer(CatEngineRender.class)
     @RegName
+    @TileRenderer(CatEngineRender.class)
     public static final BlockEntityType<CatEngineBlockEntity> CAT_ENGINE = BlockApi.createBlockEntityType(CatEngineBlockEntity::new, ModBlocks.CAT_ENGINE);
     @RegName
     public static final BlockEntityType<DevNormalBlockEntity> DEV_NORMAL = BlockApi.createBlockEntityType(DevNormalBlockEntity::new, ModBlocks.DEV_NORMAL);
@@ -38,6 +36,7 @@ public class ModBlockEntities {
     @RegName
     public static final BlockEntityType<WindGenBaseBlockEntity> WINDGEN_BASE = BlockApi.createBlockEntityType(WindGenBaseBlockEntity::new, ModBlocks.WINDGEN_BASE);
     @RegName
+    @TileRenderer(WindGenFanRender.class)
     public static final BlockEntityType<WindGenFanBlockEntity> WINDGEN_FAN = BlockApi.createBlockEntityType(WindGenFanBlockEntity::new, ModBlocks.WINDGEN_FAN);
     @RegName
     public static final BlockEntityType<WindGenMainBlockEntity> WINDGEN_MAIN = BlockApi.createBlockEntityType(WindGenMainBlockEntity::new, ModBlocks.WINDGEN_MAIN);

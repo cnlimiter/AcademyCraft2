@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class MatrixBlockEntity extends BlockEntity {
     public MatrixBlockEntity(BlockPos p_155229_, BlockState p_155230_) {
-        super(ModBlockEntities.MATRIX.get(), p_155229_, p_155230_);
+        super(ModBlockEntities.MATRIX, p_155229_, p_155230_);
     }
 
 }
