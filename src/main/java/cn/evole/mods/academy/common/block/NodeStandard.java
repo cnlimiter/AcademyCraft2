@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -59,7 +59,7 @@ public class NodeStandard extends Block {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.NODE_STANDARD.get()));
+            add(new ItemStack(ModItems.NODE_STANDARD.get()));
         }};
     }
 

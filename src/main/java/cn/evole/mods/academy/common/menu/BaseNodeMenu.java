@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.menu;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.MenuType;
@@ -14,7 +14,7 @@ public abstract class BaseNodeMenu extends AcademyMenu {
         addAcademySlot(new Slot(container, 0, 44, 0) {
             @Override
             public boolean mayPlace(ItemStack item) {
-                return item.is(AcademyItems.ENERGY_UNIT.get());
+                return item.is(ModItems.ENERGY_UNIT.get());
             }
         });
 
@@ -22,7 +22,7 @@ public abstract class BaseNodeMenu extends AcademyMenu {
         addAcademySlot(new Slot(container, 1, 44, 70) {
             @Override
             public boolean mayPlace(ItemStack item) {
-                return item.is(AcademyItems.ENERGY_UNIT.get()) || item.is(AcademyItems.DEVELOPER_PORTABLE.get());
+                return item.is(ModItems.ENERGY_UNIT.get()) || item.is(ModItems.DEVELOPER_PORTABLE.get());
             }
         });
     }

@@ -4,8 +4,8 @@ import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.AcademyItems;
-import cn.evole.mods.academy.common.AcademyMenus;
+import cn.evole.mods.academy.common.ModItems;
+import cn.evole.mods.academy.common.ModMenus;
 import cn.evole.mods.academy.common.block.*;
 import cn.evole.mods.academy.common.item.AppSettings;
 import cn.evole.mods.academy.common.item.Logo;
@@ -28,6 +28,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.slf4j.Logger;
 
 import java.util.concurrent.CompletableFuture;
@@ -83,9 +84,9 @@ public class CommonListener {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            MenuScreens.register(AcademyMenus.WIND_BASE_MENU.get(), WindBaseGui::new);
-            MenuScreens.register(AcademyMenus.WIND_MAIN_MENU.get(), WindMainGui::new);
-            MenuScreens.register(AcademyMenus.NODE_BASIC.get(), NodeBasicGui::new);
+            MenuScreens.register(ModMenus.WIND_BASE_MENU, WindBaseGui::new);
+            MenuScreens.register(ModMenus.WIND_MAIN_MENU, WindMainGui::new);
+            MenuScreens.register(ModMenus.NODE_BASIC, NodeBasicGui::new);
         });
     }
 
@@ -93,9 +94,9 @@ public class CommonListener {
     private void addCreative(CreativeModeTabEvent.Register event) {
         event.registerCreativeModeTab(new ResourceLocation(Const.MOD_ID, "academy_group"), builder ->
                 builder.title(Component.translatable("itemGroup.academy"))
-                        .icon(() -> new ItemStack(AcademyItems.LOGO.get()))
+                        .icon(() -> new ItemStack(ModItems.LOGO))
                         .displayItems((params, output) -> {
-                            AcademyItems.ITEMS.getEntries().stream().filter(item ->
+                            ModItems.ITEMS.getEntries().stream().filter(item ->
                                     !((item.get() instanceof Logo)
                                             || (item.get() instanceof AppSettings)
                                             || item.get().getDescriptionId().contains("dev_normal_sub")

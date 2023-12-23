@@ -1,5 +1,7 @@
 package cn.evole.mods.academy.api.annotations;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -16,5 +18,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface RegName
 {
-    String value();
+    @Nullable
+    String value() default "";
 }

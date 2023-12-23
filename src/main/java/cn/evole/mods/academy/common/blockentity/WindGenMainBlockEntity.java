@@ -2,7 +2,7 @@ package cn.evole.mods.academy.common.blockentity;
 
 import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.block.WindGenMain;
 import cn.evole.mods.academy.common.block.WindGenPillar;
 import net.minecraft.core.BlockPos;
@@ -32,7 +32,7 @@ public class WindGenMainBlockEntity extends AcademyContainerBlockEntity {
 
     private void checkFan(WindGenMain block, Level level, BlockPos east, Direction facing) {
         BlockState state = level.getBlockState(east);
-        if (!getItems().isEmpty() && getItems().get(0).is(AcademyItems.WINDGEN_FAN.get())) {
+        if (!getItems().isEmpty() && getItems().get(0).is(ModItems.WINDGEN_FAN.get())) {
             if (!state.is(Blocks.AIR) && state.is(ModBlocks.WINDGEN_FAN.get())) {
                 // 这一方向有风扇
                 block.setValid(true);

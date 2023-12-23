@@ -2,7 +2,7 @@ package cn.evole.mods.academy.common.blockentity;
 
 import cn.evole.mods.academy.common.ModBlockEntities;
 import cn.evole.mods.academy.common.AcademyCapability;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import cn.evole.mods.academy.common.capability.IIFCapability;
 import net.minecraft.core.BlockPos;
@@ -29,7 +29,7 @@ public class WindGenBaseBlockEntity extends AcademyContainerBlockEntity {
         this.validMiddle = validMiddle;
         if (!validBlock) return;
         getItems().forEach((item) -> {
-            if (item.is(AcademyItems.ENERGY_UNIT.get()) || item.is(AcademyItems.DEVELOPER_PORTABLE.get())) {
+            if (item.is(ModItems.ENERGY_UNIT.get()) || item.is(ModItems.DEVELOPER_PORTABLE.get())) {
                 Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
                 if (optional.isPresent()) {
                     Object cap = optional.get();

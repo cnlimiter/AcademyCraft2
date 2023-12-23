@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -26,7 +26,7 @@ public class ConstraintMetal extends Block {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.CONSTRAIN_METAL.get()));
+            add(new ItemStack(ModItems.CONSTRAIN_METAL.get()));
         }};
     }
 

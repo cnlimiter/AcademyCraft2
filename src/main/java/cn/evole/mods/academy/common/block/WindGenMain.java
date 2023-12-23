@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.WindGenMainBlockEntity;
 import cn.evole.mods.academy.common.menu.WindGenMainMenu;
 import io.netty.buffer.Unpooled;
@@ -64,7 +64,7 @@ public class WindGenMain extends BaseEntityBlock {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.WINDGEN_MAIN.get()));
+            add(new ItemStack(ModItems.WINDGEN_MAIN.get()));
         }};
     }
 

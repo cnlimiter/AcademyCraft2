@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.WindGenPillarBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -53,7 +53,7 @@ public class WindGenPillar extends BaseEntityBlock {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.WINDGEN_PILLAR.get()));
+            add(new ItemStack(ModItems.WINDGEN_PILLAR.get()));
         }};
     }
 

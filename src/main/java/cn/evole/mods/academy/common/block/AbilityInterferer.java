@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -50,7 +50,7 @@ public class AbilityInterferer extends Block {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.ABILITY_INTERFERER.get()));
+            add(new ItemStack(ModItems.ABILITY_INTERFERER.get()));
         }};
     }
 }

@@ -1,6 +1,5 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.NodeBasicBlockEntity;
 import cn.evole.mods.academy.common.menu.NodeBasicMenu;
 import io.netty.buffer.Unpooled;
@@ -14,7 +13,6 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
@@ -26,13 +24,8 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class NodeBasic extends BaseEntityBlock {
 
@@ -67,12 +60,13 @@ public class NodeBasic extends BaseEntityBlock {
         return this.defaultBlockState().setValue(FACING, p_49820_.getHorizontalDirection().getOpposite());
     }
 
-    @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
-        return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.NODE_BASIC.get()));
-        }};
-    }
+
+//    @Override
+//    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+//        return new ArrayList<>() {{
+//            add(new ItemStack(ModItems.NODE_BASIC.get()));
+//        }};
+//    }
 
     @Override
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand p_60507_, BlockHitResult p_60508_) {

@@ -1,7 +1,8 @@
 package cn.evole.mods.academy.common.block;
 
 import cn.evole.mods.academy.common.ModBlockEntities;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModBlocks;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
@@ -58,15 +60,15 @@ public class CatEngine extends BaseEntityBlock {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level p_153212_, BlockState p_153213_, BlockEntityType<T> p_153214_) {
-        return p_153212_.isClientSide() ? createTickerHelper(p_153214_, ModBlockEntities.CAT_ENGINE.get(), CatEngineBlockEntity::tickAnim) : null;
+        return p_153212_.isClientSide() ? createTickerHelper(p_153214_, ModBlockEntities.CAT_ENGINE, CatEngineBlockEntity::tickAnim) : null;
     }
 
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+    public List<ItemStack> getDrops(BlockState p_287732_, LootParams.Builder p_287596_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.CAT_ENGINE.get()));
-        }};
-    }
+            add(new ItemStack(ModBlocks.CAT_ENGINE.asItem()));
+        }};    }
+
 
 }

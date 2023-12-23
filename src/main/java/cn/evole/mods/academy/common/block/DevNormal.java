@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common.block;
 
 import cn.evole.mods.academy.common.ModBlocks;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.DevNormalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -140,7 +140,7 @@ public class DevNormal extends BaseEntityBlock {
     @Override
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.DEV_NORMAL.get()));
+            add(new ItemStack(ModItems.DEV_NORMAL.get()));
         }};
     }
 

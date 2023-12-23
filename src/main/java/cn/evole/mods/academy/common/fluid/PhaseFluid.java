@@ -3,7 +3,7 @@ package cn.evole.mods.academy.common.fluid;
 import cn.evole.mods.academy.common.ModBlocks;
 import cn.evole.mods.academy.common.AcademyFluidTypes;
 import cn.evole.mods.academy.common.AcademyFluids;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
@@ -66,7 +66,7 @@ public abstract class PhaseFluid extends FlowingFluid {
 
     @Override
     public Item getBucket() {
-        return AcademyItems.PHASE_BUCKET.get();
+        return ModItems.PHASE_BUCKET.get();
     }
 
     @Override

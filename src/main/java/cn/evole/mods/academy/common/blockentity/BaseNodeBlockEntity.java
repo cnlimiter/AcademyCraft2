@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common.blockentity;
 
 import cn.evole.mods.academy.common.AcademyCapability;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import cn.evole.mods.academy.common.capability.IIFCapability;
 import net.minecraft.core.BlockPos;
@@ -52,7 +52,7 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
     private void updatePower(int i, int i1) {
         if (getMenu() != null) {
             ItemStack item = getMenu().container.getItem(i);
-            if (item.is(AcademyItems.ENERGY_UNIT.get()) || item.is(AcademyItems.DEVELOPER_PORTABLE.get())) {
+            if (item.is(ModItems.ENERGY_UNIT.get()) || item.is(ModItems.DEVELOPER_PORTABLE.get())) {
                 Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
                 if (optional.isPresent()) {
                     Object cap = optional.get();

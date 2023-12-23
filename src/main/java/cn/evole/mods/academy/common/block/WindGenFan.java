@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.common.ModItems;
 import cn.evole.mods.academy.common.blockentity.WindGenFanBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -54,7 +54,7 @@ public class WindGenFan extends BaseEntityBlock {
     public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
 
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.WINDGEN_FAN.get()));
+            add(new ItemStack(ModItems.WINDGEN_FAN.get()));
         }};
     }
 
