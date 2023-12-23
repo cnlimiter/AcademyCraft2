@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.client.gui;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.blockentity.WindGenBaseBlockEntity;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;
+import cn.evole.mods.academy.constant.Const;
 import cn.evole.mods.academy.utils.RenderUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,10 +16,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class WindBaseGui extends AcademyBaseUI<WindGenBaseMenu> {
 
-    private static final ResourceLocation UI_WIN_BASE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/ui/ui_windbase.png");
-    private static final ResourceLocation IC_WIN_BASE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_wind_base.png");
-    private static final ResourceLocation IC_WIN_MIDDLE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_wind_middle.png");
-    private static final ResourceLocation IC_WIN_MAIN = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_wind_main.png");
+    private static final ResourceLocation UI_WIN_BASE = new ResourceLocation(Const.MOD_ID, "textures/guis/ui/ui_windbase.png");
+    private static final ResourceLocation IC_WIN_BASE = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_wind_base.png");
+    private static final ResourceLocation IC_WIN_MIDDLE = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_wind_middle.png");
+    private static final ResourceLocation IC_WIN_MAIN = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_wind_main.png");
     private final Inventory inv;
 
     public WindBaseGui(WindGenBaseMenu menu, Inventory inv, Component p_97743_) {

@@ -1,13 +1,13 @@
 package cn.evole.mods.academy.common;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.constant.Const;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 
 public class AcademyEntities {
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, AcademyCraft.MODID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Const.MOD_ID);
 
 
 }

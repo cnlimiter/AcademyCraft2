@@ -1,6 +1,5 @@
 package cn.evole.mods.academy.init.listener;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
@@ -10,6 +9,7 @@ import cn.evole.mods.academy.common.AcademyMenus;
 import cn.evole.mods.academy.common.block.*;
 import cn.evole.mods.academy.common.item.AppSettings;
 import cn.evole.mods.academy.common.item.Logo;
+import cn.evole.mods.academy.constant.Const;
 import cn.evole.mods.academy.init.gen.provider.AcademyBlockTagsProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -91,7 +91,7 @@ public class CommonListener {
 
 
     private void addCreative(CreativeModeTabEvent.Register event) {
-        event.registerCreativeModeTab(new ResourceLocation(AcademyCraft.MODID, "academy_group"), builder ->
+        event.registerCreativeModeTab(new ResourceLocation(Const.MOD_ID, "academy_group"), builder ->
                 builder.title(Component.translatable("itemGroup.academy"))
                         .icon(() -> new ItemStack(AcademyItems.LOGO.get()))
                         .displayItems((params, output) -> {

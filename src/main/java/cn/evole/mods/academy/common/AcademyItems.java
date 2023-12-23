@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.item.*;
+import cn.evole.mods.academy.constant.Const;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 
 public class AcademyItems {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, AcademyCraft.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Const.MOD_ID);
 
     public static final RegistryObject<Item> CAT_ENGINE = ITEMS.register("cat_engine", () -> new BlockItem(AcademyBlocks.CAT_ENGINE.get(), new Item.Properties()));
     public static final RegistryObject<Item> ABILITY_INTERFERER = ITEMS.register("ability_interferer", () -> new BlockItem(AcademyBlocks.ABILITY_INTERFERER.get(), new Item.Properties()));

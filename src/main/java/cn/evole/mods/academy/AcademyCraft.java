@@ -1,16 +1,13 @@
 package cn.evole.mods.academy;
 
 import cn.evole.mods.academy.common.*;
+import cn.evole.mods.academy.constant.Const;
 import cn.evole.mods.academy.init.listener.CommonListener;
-import com.mojang.logging.LogUtils;
 import net.minecraftforge.fml.common.Mod;
-import org.slf4j.Logger;
 
 
-@Mod(AcademyCraft.MODID)
+@Mod(Const.MOD_ID)
 public class AcademyCraft {
-    public static final String MODID = "academy";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public AcademyCraft() {
 

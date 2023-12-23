@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.client.gui;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.capability.AcademyNode;
 import cn.evole.mods.academy.common.menu.AcademyMenu;
+import cn.evole.mods.academy.constant.Const;
 import cn.evole.mods.academy.utils.RenderUtils;
 import com.mojang.blaze3d.platform.InputConstants;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -18,20 +18,20 @@ import net.minecraft.world.level.Level;
 
 public abstract class AcademyBaseUI<T extends AcademyMenu> extends AbstractContainerScreen<T> {
 
-    private static final ResourceLocation PARENT_BACKGROUND = new ResourceLocation(AcademyCraft.MODID, "textures/guis/parent/parent_background.png");
-    private static final ResourceLocation UI_INV = new ResourceLocation(AcademyCraft.MODID, "textures/guis/ui/ui_inventory.png");
+    private static final ResourceLocation PARENT_BACKGROUND = new ResourceLocation(Const.MOD_ID, "textures/guis/parent/parent_background.png");
+    private static final ResourceLocation UI_INV = new ResourceLocation(Const.MOD_ID, "textures/guis/ui/ui_inventory.png");
 
-    private static final ResourceLocation IC_INV = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_inv.png");
-    private static final ResourceLocation IC_WIRELESS = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_wireless.png");
-    private static final ResourceLocation IC_TOMATRIX = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_tomatrix.png");
-    private static final ResourceLocation IC_MATRIX = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_matrix.png");
-    private static final ResourceLocation IC_UNCONNECTED = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_unconnected.png");
-    private static final ResourceLocation IC_CONNECTED = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_connected.png");
-    private static final ResourceLocation IC_KEY = new ResourceLocation(AcademyCraft.MODID, "textures/guis/icons/icon_key.png");
-    private static final ResourceLocation ELEMENT_BG_300_32 = new ResourceLocation(AcademyCraft.MODID, "textures/guis/element/element_background300x32.png");
-    private static final ResourceLocation ELEMENT_BG_300_32_I = new ResourceLocation(AcademyCraft.MODID, "textures/guis/element/element_background300x32_input.png");
-    private static final ResourceLocation BTN_ARROW_UP = new ResourceLocation(AcademyCraft.MODID, "textures/guis/button/button_arrowupb.png");
-    private static final ResourceLocation BTN_ARROW_DOWN = new ResourceLocation(AcademyCraft.MODID, "textures/guis/button/button_arrowdownb.png");
+    private static final ResourceLocation IC_INV = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_inv.png");
+    private static final ResourceLocation IC_WIRELESS = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_wireless.png");
+    private static final ResourceLocation IC_TOMATRIX = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_tomatrix.png");
+    private static final ResourceLocation IC_MATRIX = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_matrix.png");
+    private static final ResourceLocation IC_UNCONNECTED = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_unconnected.png");
+    private static final ResourceLocation IC_CONNECTED = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_connected.png");
+    private static final ResourceLocation IC_KEY = new ResourceLocation(Const.MOD_ID, "textures/guis/icons/icon_key.png");
+    private static final ResourceLocation ELEMENT_BG_300_32 = new ResourceLocation(Const.MOD_ID, "textures/guis/element/element_background300x32.png");
+    private static final ResourceLocation ELEMENT_BG_300_32_I = new ResourceLocation(Const.MOD_ID, "textures/guis/element/element_background300x32_input.png");
+    private static final ResourceLocation BTN_ARROW_UP = new ResourceLocation(Const.MOD_ID, "textures/guis/button/button_arrowupb.png");
+    private static final ResourceLocation BTN_ARROW_DOWN = new ResourceLocation(Const.MOD_ID, "textures/guis/button/button_arrowdownb.png");
     public final Inventory inv;
     private boolean wireless = false;
     private boolean renderInv = true;

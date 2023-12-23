@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.core.app;
 
-import cn.evole.mods.academy.Resources;
+import cn.evole.mods.academy.constant.Resources;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;

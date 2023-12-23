@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.client.gui;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.menu.BaseNodeMenu;
+import cn.evole.mods.academy.constant.Const;
 import cn.evole.mods.academy.utils.RenderUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,8 +11,8 @@ import net.minecraft.world.entity.player.Inventory;
 
 public abstract class BaseNodeGui<T extends BaseNodeMenu> extends AcademyBaseUI<T> {
 
-    private static final ResourceLocation UI_NODE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/ui/ui_node.png");
-    private static final ResourceLocation EFFECT_NODE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/effect/effect_node.png");
+    private static final ResourceLocation UI_NODE = new ResourceLocation(Const.MOD_ID, "textures/guis/ui/ui_node.png");
+    private static final ResourceLocation EFFECT_NODE = new ResourceLocation(Const.MOD_ID, "textures/guis/effect/effect_node.png");
     private boolean connected = false;
 
     public BaseNodeGui(T t, Inventory inv, Component p_97743_) {

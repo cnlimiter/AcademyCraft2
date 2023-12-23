@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.fluid.type;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.constant.Const;
 import com.mojang.blaze3d.shaders.FogShape;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Camera;
@@ -45,10 +45,10 @@ public class PhaseLiquidType extends FluidType {
     @Override
     public void initializeClient(Consumer<IClientFluidTypeExtensions> consumer) {
         consumer.accept(new IClientFluidTypeExtensions() {
-            private static final ResourceLocation UNDERWATER_LOCATION = new ResourceLocation(AcademyCraft.MODID, "textures/block/black.png"),
-                    WATER_STILL = new ResourceLocation(AcademyCraft.MODID, "block/phase_liquid"),
-                    WATER_FLOW = new ResourceLocation(AcademyCraft.MODID, "block/phase_liquid"),
-                    WATER_OVERLAY = new ResourceLocation(AcademyCraft.MODID, "block/phase_liquid");
+            private static final ResourceLocation UNDERWATER_LOCATION = new ResourceLocation(Const.MOD_ID, "textures/block/black.png"),
+                    WATER_STILL = new ResourceLocation(Const.MOD_ID, "block/phase_liquid"),
+                    WATER_FLOW = new ResourceLocation(Const.MOD_ID, "block/phase_liquid"),
+                    WATER_OVERLAY = new ResourceLocation(Const.MOD_ID, "block/phase_liquid");
 
             @Override
             public ResourceLocation getStillTexture() {

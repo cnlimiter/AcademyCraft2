@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.block.*;
+import cn.evole.mods.academy.constant.Const;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -9,7 +9,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 
 public class AcademyBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AcademyCraft.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Const.MOD_ID);
 
     public static final RegistryObject<Block> CAT_ENGINE = BLOCKS.register("cat_engine", CatEngine::new);
     public static final RegistryObject<Block> ABILITY_INTERFERER = BLOCKS.register("ability_interferer", AbilityInterferer::new);

@@ -1,11 +1,11 @@
 package cn.evole.mods.academy.init.listener;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.client.model.CatEngineModel;
 import cn.evole.mods.academy.client.render.CatEngineRender;
 import cn.evole.mods.academy.client.render.PhaseLiquidRender;
 import cn.evole.mods.academy.client.render.WindGenFanRender;
 import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.constant.Const;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,7 +20,7 @@ import org.slf4j.Logger;
  *
  * @author lliiooll
  */
-@Mod.EventBusSubscriber(modid = AcademyCraft.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = Const.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientListener {
 
     private static ClientListener INSTANCE = null;

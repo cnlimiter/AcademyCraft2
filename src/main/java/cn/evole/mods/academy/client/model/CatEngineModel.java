@@ -4,7 +4,7 @@ package cn.evole.mods.academy.client.model;
 // Paste this class into your mod and generate all required imports
 
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.constant.Const;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.Model;
@@ -18,7 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 
 public class CatEngineModel extends Model {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(AcademyCraft.MODID, "cat_engine"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Const.MOD_ID, "cat_engine"), "main");
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     private final ModelPart bb_main;
 

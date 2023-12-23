@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.init.listener;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.constant.Const;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -13,7 +13,7 @@ import org.slf4j.Logger;
  *
  * @author lliiooll
  */
-@Mod.EventBusSubscriber(modid = AcademyCraft.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
+@Mod.EventBusSubscriber(modid = Const.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.DEDICATED_SERVER)
 public class ServerListener {
 
     private static ServerListener INSTANCE = null;

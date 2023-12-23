@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.client.render;
 
-import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.client.model.CatEngineModel;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
+import cn.evole.mods.academy.constant.Const;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
@@ -38,7 +38,7 @@ public class CatEngineRender implements BlockEntityRenderer<CatEngineBlockEntity
         if (p_112307_.enable) {
             p_112309_.rotateAround(Axis.XN.rotation(p_112307_.rH += 0.2), 0.5f, 0.5f, 0.5f);
         }
-        ResourceLocation location = new ResourceLocation(AcademyCraft.MODID, "textures/block/cat_engine.png");
+        ResourceLocation location = new ResourceLocation(Const.MOD_ID, "textures/block/cat_engine.png");
         VertexConsumer vertexconsumer = p_112310_.getBuffer(RenderType.entityTranslucentCull(location));
         this.model.renderToBuffer(p_112309_, vertexconsumer, p_112311_, p_112312_, 1.0F, 1.0F, 1.0F, 1.0F);
         p_112309_.popPose();

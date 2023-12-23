@@ -1,4 +1,4 @@
-package cn.evole.mods.academy;
+package cn.evole.mods.academy.constant;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -8,7 +8,7 @@ public class Resources {
         return res("textures/" + loc + ".png");
     }
     public static ResourceLocation res(String loc) {
-        return new ResourceLocation(AcademyCraft.MODID, loc);
+        return new ResourceLocation(Const.MOD_ID, loc);
     }
     public static SoundEvent sound(String loc) {
         return SoundEvent.createVariableRangeEvent(res(loc));
