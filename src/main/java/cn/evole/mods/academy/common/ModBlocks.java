@@ -59,6 +59,6 @@ public class ModBlocks {
     @RegName
     public static final Block WINDGEN_FAN = new WindGenFan();
     @RegName
-    public static final Block PHASE_LIQUID = new PhaseFluidBlock();
+    public static final Block PHASE_LIQUID = ModFluids.PHASE_LIQUID.getBlock();
 
 }
