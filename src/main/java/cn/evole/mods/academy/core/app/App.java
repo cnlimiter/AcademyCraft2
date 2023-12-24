@@ -3,8 +3,8 @@ package cn.evole.mods.academy.core.app;
 import cn.evole.mods.academy.constant.Resources;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 
 /**
  * Name: AcademyCraft2 / App

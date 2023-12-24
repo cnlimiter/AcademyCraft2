@@ -111,8 +111,8 @@ public class RegAdapter {
                 Item.Properties props =
                         gen != null ? gen.createItemProperties(new Item.Properties()) : new Item.Properties();
                 item = new BlockItem(blk, props);
-//                if(blk instanceof ICreativeTabBlock t)
-//                    t.getCreativeTab().add(item);
+                if(blk instanceof ICreativeTabBlock t)
+                    t.getCreativeTab().add(item);
             }
             grabber.accept(e.b(), Cast.cast(item));
         }

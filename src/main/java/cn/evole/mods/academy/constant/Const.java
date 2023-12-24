@@ -1,8 +1,7 @@
 package cn.evole.mods.academy.constant;
 
-import cn.evole.mods.academy.api.annotations.RegTab;
+import cn.evole.mods.academy.api.annotations.TabReg;
 import cn.evole.mods.academy.api.common.CreativeTab;
-import cn.evole.mods.academy.common.ModItems;
 import com.mojang.logging.LogUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -20,7 +19,7 @@ public class Const {
 
     public static final String MOD_ID = "academy";
 
-    @RegTab
+    @TabReg
     public static final CreativeTab AC_TAB = new CreativeTab(Resources.res("root"),
             b -> b.icon(ModItems.LOGO::getDefaultInstance)
                     .title(Component.translatable("itemGroup." + MOD_ID))

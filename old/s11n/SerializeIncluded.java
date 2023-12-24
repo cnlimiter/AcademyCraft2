@@ -1,4 +1,5 @@
-package cn.evole.mods.academy.api.annotations;
+
+package cn.evole.mods.academy.api.s11n;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -6,14 +7,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Author cnlimiter
- * CreateTime 2023/12/24 0:04
- * Name RegTab
- * Description
+ * Force a field to be serialized.
  */
-
 @Target(ElementType.FIELD)
-@Retention(RetentionPolicy.CLASS)
-public @interface RegTab
-{
+@Retention(RetentionPolicy.RUNTIME)
+public @interface SerializeIncluded {
 }

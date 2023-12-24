@@ -2,7 +2,7 @@ package cn.evole.mods.academy.core.app.guis.settings;
 
 import cn.evole.mods.academy.core.app.App;
 import cn.evole.mods.academy.core.app.AppEnvironment;
-import cn.evole.mods.academy.core.app.RegApp;
+import cn.evole.mods.academy.api.annotations.AppReg;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -15,7 +15,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class AppSettings extends App {
 
-    @RegApp(priority = -1)
+    @AppReg(priority = -1)
     public static AppSettings instance = new AppSettings();
 
     private AppSettings() {

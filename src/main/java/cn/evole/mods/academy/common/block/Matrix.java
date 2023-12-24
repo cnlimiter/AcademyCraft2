@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.ModBlocks;
+import cn.evole.mods.academy.constant.ModBlocks;
 import cn.evole.mods.academy.common.blockentity.MatrixBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

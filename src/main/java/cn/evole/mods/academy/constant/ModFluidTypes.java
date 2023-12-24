@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common;
+package cn.evole.mods.academy.constant;
 
 import cn.evole.mods.academy.common.fluid.type.PhaseLiquidType;
 import cn.evole.mods.academy.constant.Const;

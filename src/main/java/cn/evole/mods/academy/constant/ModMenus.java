@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common;
+package cn.evole.mods.academy.constant;
 
 import cn.evole.mods.academy.api.annotations.ClientSetup;
 import cn.evole.mods.academy.api.annotations.Reg;

@@ -3,7 +3,7 @@ package cn.evole.mods.academy.init.listener;
 import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
-import cn.evole.mods.academy.common.ModMenus;
+import cn.evole.mods.academy.constant.ModMenus;
 import cn.evole.mods.academy.init.gen.provider.AcademyBlockTagsProvider;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.screens.MenuScreens;

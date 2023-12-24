@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.ModBlockEntities;
+import cn.evole.mods.academy.constant.ModBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 

@@ -3,8 +3,8 @@ package cn.evole.mods.academy.utils;
 import cn.evole.mods.academy.constant.Debug;
 import cn.evole.mods.academy.utils.java.Cast;
 import com.google.common.collect.Lists;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.forgespi.language.ModFileScanData;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforgespi.language.ModFileScanData;
 import org.objectweb.asm.Type;
 
 import javax.annotation.Nonnull;

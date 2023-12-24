@@ -3,6 +3,8 @@ package cn.evole.mods.academy.constant;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 
+import java.io.InputStream;
+
 public class Resources {
     public static ResourceLocation getTexture(String loc) {
         return res("textures/" + loc + ".png");
@@ -54,6 +56,21 @@ public class Resources {
             ARC_SMALL[] = getEffectSeq("arcs", 10);
 
 
+
+    public static InputStream getResourceStream(ResourceLocation res) {
+        try {
+            return Debug.assertNotNull(
+                    Resources.class.getResourceAsStream(resToPath(res)), () -> "Can't find resource " + res.toString()
+            );
+        } catch(Exception e) {
+            throw new RuntimeException("Invalid resource " + res, e);
+        }
+    }
+
+    private static String resToPath(ResourceLocation res) {
+        String domain = res.getNamespace(), path = res.getPath();
+        return "/assets/" + domain + "/" + path;
+    }
 
 
 }

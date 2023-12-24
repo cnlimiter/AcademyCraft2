@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.ModBlocks;
+import cn.evole.mods.academy.constant.ModBlocks;
 import cn.evole.mods.academy.common.blockentity.AcademyContainerBlockEntity;
 import cn.evole.mods.academy.common.blockentity.WindGenBaseBlockEntity;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;

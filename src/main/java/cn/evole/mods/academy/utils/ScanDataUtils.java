@@ -48,7 +48,7 @@ public class ScanDataUtils {
 
     public static Collection<ModAwareAnnotationData> lookupAnnotatedObjects(Class<? extends Annotation> annotation)
     {
-        return lookupAnnotatedObjects(annotation, Predicates.alwaysTrue());
+        return lookupAnnotatedObjects(annotation, data -> true);
     }
 
     public static Collection<ModAwareAnnotationData> lookupAnnotatedObjects(Class<? extends Annotation> annotation, Predicate<ModAwareAnnotationData> matcher)

@@ -1,5 +1,6 @@
 package cn.evole.mods.academy;
 
+import cn.evole.mods.academy.api.init.adapter.AppRegAdapter;
 import cn.evole.mods.academy.api.init.adapter.ClientSetupAdapter;
 import cn.evole.mods.academy.api.init.adapter.RegAdapter;
 import cn.evole.mods.academy.api.init.adapter.SetupAdapter;
@@ -28,6 +29,7 @@ public class AcademyCraft {
         RegAdapter.init();
         SetupAdapter.init();
         ClientSetupAdapter.init();
+        AppRegAdapter.init();
 
         CommonListener listener = CommonListener.getInstance();
         listener.init();

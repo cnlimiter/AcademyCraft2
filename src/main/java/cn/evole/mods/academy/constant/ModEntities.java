@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common;
+package cn.evole.mods.academy.constant;
 
 import cn.evole.mods.academy.constant.Const;
 import net.minecraft.world.entity.EntityType;

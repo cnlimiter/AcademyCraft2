@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.ModCapability;
-import cn.evole.mods.academy.common.ModBlockEntities;
+import cn.evole.mods.academy.constant.ModCapability;
+import cn.evole.mods.academy.constant.ModBlockEntities;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
