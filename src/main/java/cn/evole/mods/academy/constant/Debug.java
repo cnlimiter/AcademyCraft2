@@ -73,7 +73,7 @@ public class Debug {
         logger.debug(msg);
     }
 
-    public static void debugFormat(String format, Object ...pars) {
+    public static void debug(String format, Object ...pars) {
         debug(String.format(format, pars));
     }
 

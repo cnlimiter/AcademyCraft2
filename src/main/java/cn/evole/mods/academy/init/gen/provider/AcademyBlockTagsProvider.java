@@ -20,7 +20,7 @@ public class AcademyBlockTagsProvider extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider p_256380_) {
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList().toArray(new Block[0]));
+//        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
+//                .add(ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get).toList().toArray(new Block[0]));
     }
 }

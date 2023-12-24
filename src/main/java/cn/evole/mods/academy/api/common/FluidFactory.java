@@ -1,5 +1,7 @@
 package cn.evole.mods.academy.api.common;
 
+import cn.evole.mods.academy.api.init.adapter.TagAdapter;
+import cn.evole.mods.academy.api.init.registry.FluidApi;
 import cn.evole.mods.academy.api.interfaces.ICustomReg;
 import cn.evole.mods.academy.api.interfaces.IRegListener;
 import cn.evole.mods.academy.utils.DistUtils;
@@ -287,7 +289,7 @@ public class FluidFactory implements ICustomReg, ItemLike
 
     public static Builder builder(FluidType.Properties typeProps)
     {
-        return new Builder(() -> new FluidTypeHL(typeProps));
+        return new Builder(() -> new FluidApi(typeProps));
     }
 
     public static class Builder

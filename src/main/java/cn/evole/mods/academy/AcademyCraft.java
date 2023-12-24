@@ -8,6 +8,7 @@ import cn.evole.mods.academy.init.listener.CommonListener;
 import cn.evole.mods.academy.init.proxy.ClientProxy;
 import cn.evole.mods.academy.init.proxy.CommonProxy;
 import cn.evole.mods.academy.utils.DistUtils;
+import net.neoforged.bus.api.BusBuilder;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
@@ -16,6 +17,7 @@ import net.neoforged.neoforge.common.NeoForge;
 @Mod(Const.MOD_ID)
 public class AcademyCraft {
     public static final CommonProxy PROXY = DistUtils.unsafeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+    public static final IEventBus EVENT_BUS = BusBuilder.builder().build();
 
     public AcademyCraft(IEventBus modEventBus) {
         modEventBus.register(this);
