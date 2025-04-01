@@ -32,11 +32,10 @@ import java.util.stream.Stream;
  * Version: 1.0
  */
 public class Static {
-    public static final String MOD_ID = "avaritia";
-
+    public static final String MOD_ID = "academy";
     public static final Logger LOGGER = LogManager.getLogger();
     public static final Gson GSON = new GsonBuilder().setPrettyPrinting().enableComplexMapKeySerialization().create();
-    public static final GameProfile AVARITIA_FAKE_PLAYER = new GameProfile(UUID.fromString("32283731-bbef-487c-bb69-c7e32f84ed27"), "[Avaritia]");
+    public static final GameProfile FAKE_PLAYER = new GameProfile(UUID.fromString("32283731-bbef-487c-bb69-c7e32f84ed27"), "[Academy]");
     public static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat(",###");
     public static final boolean curios = ModList.get().isLoaded("curios");
 

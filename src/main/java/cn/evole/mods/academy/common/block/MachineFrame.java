@@ -1,12 +1,14 @@
 package cn.evole.mods.academy.common.block;
 
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import cn.evole.mods.academy.init.registry.AcademyItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,7 @@ import java.util.List;
 public class MachineFrame extends Block {
 
     public MachineFrame() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
@@ -22,14 +24,11 @@ public class MachineFrame extends Block {
         );
 
     }
-
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+    public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.MACHINE_FRAME.get()));
+            add(new ItemStack(AcademyBlocks.MACHINE_FRAME.get()));
         }};
     }
-
-
 
 }

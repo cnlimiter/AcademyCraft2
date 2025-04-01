@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.init.registry;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.Static;
 import cn.evole.mods.academy.common.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -16,40 +16,40 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
 public class AcademyBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, AcademyCraft.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Static.MOD_ID);
 
-    public static final RegistryObject<Block> CAT_ENGINE = BLOCKS.register("cat_engine", CatEngine::new);
-    public static final RegistryObject<Block> ABILITY_INTERFERER = BLOCKS.register("ability_interferer", AbilityInterferer::new);
-    public static final RegistryObject<Block> CONSTRAIN_METAL = BLOCKS.register("constraint_metal", ConstraintMetal::new);
-    public static final RegistryObject<Block> CRYSTAL_ORE = BLOCKS.register("crystal_ore", CrystalOre::new);
-    public static final RegistryObject<Block> RESO_ORE = BLOCKS.register("reso_ore", ResoOre::new);
-    public static final RegistryObject<Block> IMAGSIL_ORE = BLOCKS.register("imagsil_ore", ImagsilOre::new);
-    public static final RegistryObject<Block> IMAG_FUSOR = BLOCKS.register("imag_fusor", ImagFusor::new);
-    public static final RegistryObject<Block> MACHINE_FRAME = BLOCKS.register("machine_frame", MachineFrame::new);
-    public static final RegistryObject<Block> METAL_FORMER = BLOCKS.register("metal_former", MetalFomer::new);
-    public static final RegistryObject<Block> NODE_BASIC = BLOCKS.register("node_basic", NodeBasic::new);
-    public static final RegistryObject<Block> NODE_ADVANCED = BLOCKS.register("node_advanced", NodeAdvanced::new);
-    public static final RegistryObject<Block> NODE_STANDARD = BLOCKS.register("node_standard", NodeStandard::new);
-    public static final RegistryObject<Block> DEV_NORMAL = BLOCKS.register("dev_normal", DevNormal::new);
-    public static final RegistryObject<Block> DEV_ADVANCED = BLOCKS.register("dev_advanced", DevAdvanced::new);
-    public static final RegistryObject<Block> DEV_NORMAL_SUB = BLOCKS.register("dev_normal_sub", DevNormalSubBlock::new);
-    public static final RegistryObject<Block> DEV_ADVANCED_SUB = BLOCKS.register("dev_advanced_sub", DevAdvancedSubBlock::new);
-    public static final RegistryObject<Block> WIND_GEN_BASE_SUB = BLOCKS.register("windgen_base_sub", WindGenBaseSubBlock::new);
-    public static final RegistryObject<Block> MATRIX = BLOCKS.register("matrix", Matrix::new);
-    public static final RegistryObject<Block> MATRIX_SUB = BLOCKS.register("matrix_sub", MatrixSubBlock::new);
-    public static final RegistryObject<Block> PHASE_GEN = BLOCKS.register("phase_gen", PhaseGen::new);
-    public static final RegistryObject<Block> SOLAR_GEN = BLOCKS.register("solar_gen", SolarGen::new);
-    public static final RegistryObject<Block> WINDGEN_BASE = BLOCKS.register("windgen_base", WindGenBase::new);
-    public static final RegistryObject<Block> WINDGEN_MAIN = BLOCKS.register("windgen_main", WindGenMain::new);
-    public static final RegistryObject<Block> WINDGEN_PILLAR = BLOCKS.register("windgen_pillar", WindGenPillar::new);
-    public static final RegistryObject<Block> WINDGEN_FAN = BLOCKS.register("windgen_fan_block", WindGenFan::new);
-    public static final RegistryObject<Block> PHASE_LIQUID = BLOCKS.register("phase_liquid", PhaseFluidBlock::new);
+    public static RegistryObject<Block> CAT_ENGINE = itemBlock("cat_engine", CatEngine::new);
+    public static RegistryObject<Block> ABILITY_INTERFERER = itemBlock("ability_interferer", AbilityInterferer::new);
+    public static RegistryObject<Block> CONSTRAIN_METAL = itemBlock("constraint_metal", ConstraintMetal::new);
+    public static RegistryObject<Block> CRYSTAL_ORE = itemBlock("crystal_ore", CrystalOre::new);
+    public static RegistryObject<Block> RESO_ORE = itemBlock("reso_ore", ResoOre::new);
+    public static RegistryObject<Block> IMAGSIL_ORE = itemBlock("imagsil_ore", ImagsilOre::new);
+    public static RegistryObject<Block> IMAG_FUSOR = itemBlock("imag_fusor", ImagFusor::new);
+    public static RegistryObject<Block> MACHINE_FRAME = itemBlock("machine_frame", MachineFrame::new);
+    public static RegistryObject<Block> METAL_FORMER = itemBlock("metal_former", MetalFomer::new);
+    public static RegistryObject<Block> NODE_BASIC = itemBlock("node_basic", NodeBasic::new);
+    public static RegistryObject<Block> NODE_ADVANCED = itemBlock("node_advanced", NodeAdvanced::new);
+    public static RegistryObject<Block> NODE_STANDARD = itemBlock("node_standard", NodeStandard::new);
+    public static RegistryObject<Block> DEV_NORMAL = itemBlock("dev_normal", DevNormal::new);
+    public static RegistryObject<Block> DEV_ADVANCED = itemBlock("dev_advanced", DevAdvanced::new);
+    public static RegistryObject<Block> DEV_NORMAL_SUB = itemBlock("dev_normal_sub", DevNormalSubBlock::new, false);
+    public static RegistryObject<Block> DEV_ADVANCED_SUB = itemBlock("dev_advanced_sub", DevAdvancedSubBlock::new, false);
+    public static RegistryObject<Block> WIND_GEN_BASE_SUB = itemBlock("windgen_base_sub", WindGenBaseSubBlock::new, false);
+    public static RegistryObject<Block> MATRIX = itemBlock("matrix", Matrix::new);
+    public static RegistryObject<Block> MATRIX_SUB = itemBlock("matrix_sub", MatrixSubBlock::new, false);
+    public static RegistryObject<Block> PHASE_GEN = itemBlock("phase_gen", PhaseGen::new);
+    public static RegistryObject<Block> SOLAR_GEN = itemBlock("solar_gen", SolarGen::new);
+    public static RegistryObject<Block> WINDGEN_BASE = itemBlock("windgen_base", WindGenBase::new);
+    public static RegistryObject<Block> WINDGEN_MAIN = itemBlock("windgen_main", WindGenMain::new);
+    public static RegistryObject<Block> WINDGEN_PILLAR = itemBlock("windgen_pillar", WindGenPillar::new);
+    public static RegistryObject<Block> WINDGEN_FAN = itemBlock("windgen_fan_block", WindGenFan::new, false);
+    public static RegistryObject<Block> PHASE_LIQUID = itemBlock("phase_liquid", PhaseFluidBlock::new, false);
 
 
 
 
     private static RegistryObject<Block> baseBlock(String name, Supplier<Block> block) {
-        return BLOCKS.register(name, block);
+        return itemBlock(name, block);
     }
 
     public static RegistryObject<Block> itemBlock(String name, Supplier<Block> block) {
@@ -66,13 +66,13 @@ public class AcademyBlocks {
 
     public static RegistryObject<Block> itemBlock(String name, Supplier<Block> block, boolean hasItem, Item.Properties properties) {
         var reg = BLOCKS.register(name, block);
-        if (hasItem) ModItems.item(name, () -> new BlockItem(reg.get(), properties));
+        if (hasItem) AcademyItems.item(name, () -> new BlockItem(reg.get(), properties));
         return reg;
     }
 
     public static RegistryObject<Block> itemBurnBlock(String name, Supplier<Block> block, boolean hasItem, Item.Properties properties, int burnTime) {
         var reg = BLOCKS.register(name, block);
-        if (hasItem) ModItems.item(name, () -> new BlockItem(reg.get(), properties){
+        if (hasItem) AcademyItems.item(name, () -> new BlockItem(reg.get(), properties){
             @Override
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
                 return burnTime;

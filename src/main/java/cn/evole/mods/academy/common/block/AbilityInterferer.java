@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import cn.evole.mods.academy.init.registry.AcademyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -12,9 +13,11 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +27,8 @@ public class AbilityInterferer extends Block {
     private static final IntegerProperty STATUS = IntegerProperty.create("status", 0, 1);
 
     public AbilityInterferer() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
+                .mapColor(MapColor.STONE)
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(3.0f)
@@ -48,9 +52,10 @@ public class AbilityInterferer extends Block {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+    public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.ABILITY_INTERFERER.get()));
+            add(new ItemStack(AcademyBlocks.ABILITY_INTERFERER.get()));
         }};
     }
+
 }

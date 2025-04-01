@@ -8,7 +8,7 @@ public class Resources {
         return res("textures/" + loc + ".png");
     }
     public static ResourceLocation res(String loc) {
-        return new ResourceLocation(AcademyCraft.MODID, loc);
+        return new ResourceLocation(Static.MOD_ID, loc);
     }
     public static SoundEvent sound(String loc) {
         return SoundEvent.createVariableRangeEvent(res(loc));

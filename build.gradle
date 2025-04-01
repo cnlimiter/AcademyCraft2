@@ -117,10 +117,11 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:$minecraft_version-$forge_version"
+    annotationProcessor "org.spongepowered:mixin:$mixin_version:processor"
 
-    libraries "icyllis.modernui:ModernUI-Core:3.11.1"
-    libraries "icyllis.modernui:ModernUI-Markdown:3.11.1"
-    implementation fg.deobf("curse.maven:modern-ui-352491:5977000")
+//    libraries "icyllis.modernui:ModernUI-Core:3.11.1"
+//    libraries "icyllis.modernui:ModernUI-Markdown:3.11.1"
+//    implementation fg.deobf("curse.maven:modern-ui-352491:5977000")
 
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
@@ -129,7 +130,6 @@ dependencies {
 
     compileOnly ("org.projectlombok:lombok:$lombok_version")
     annotationProcessor ("org.projectlombok:lombok:$lombok_version")
-    annotationProcessor "org.spongepowered:mixin:$mixin_version:processor"
 
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")

@@ -1,18 +1,18 @@
 package cn.evole.mods.academy.client.gui;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.Static;
 import cn.evole.mods.academy.common.menu.BaseNodeMenu;
 import cn.evole.mods.academy.utils.RenderUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
-import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public abstract class BaseNodeGui<T extends BaseNodeMenu> extends AcademyBaseUI<T> {
 
-    private static final ResourceLocation UI_NODE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/ui/ui_node.png");
-    private static final ResourceLocation EFFECT_NODE = new ResourceLocation(AcademyCraft.MODID, "textures/guis/effect/effect_node.png");
+    private static final ResourceLocation UI_NODE = new ResourceLocation(Static.MOD_ID, "textures/guis/ui/ui_node.png");
+    private static final ResourceLocation EFFECT_NODE = new ResourceLocation(Static.MOD_ID, "textures/guis/effect/effect_node.png");
     private boolean connected = false;
 
     public BaseNodeGui(T t, Inventory inv, Component p_97743_) {
@@ -24,12 +24,12 @@ public abstract class BaseNodeGui<T extends BaseNodeMenu> extends AcademyBaseUI<
     private int animIndex = 0;
 
     @Override
-    public void renderBackground(PoseStack stack, float p_97788_, int mouseX, int mouseY) {
+    public void renderBackground(GuiGraphics graphics, float p_97788_, int mouseX, int mouseY) {
         RenderSystem.setShaderColor(1, 1, 1, 1);
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
 
-        RenderUtils.renderCenter(176, 187, this.width, this.height, stack, UI_NODE);
+        RenderUtils.renderCenter(graphics, 176, 187, this.width, this.height, UI_NODE);
 
         this.connected = activeNode != -1;
         if (!this.connected) {
@@ -45,10 +45,10 @@ public abstract class BaseNodeGui<T extends BaseNodeMenu> extends AcademyBaseUI<
                 lastAnimTime = System.currentTimeMillis();
             }
         }
-        RenderUtils.renderCenter(0, -(75 / 2) - 2,
+        RenderUtils.renderCenter(graphics, 0, -(75 / 2) - 2,
                 176 / 2, 75 / 2,
                 176, 75,
-                this.width, this.height, stack, EFFECT_NODE,
+                this.width, this.height, EFFECT_NODE,
                 75 * animIndex, 0, 176, 750);
         //TODO: 检测是否链接矩阵，播放动画
         RenderSystem.disableBlend();

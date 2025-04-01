@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.init.registry;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.Static;
 import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
@@ -21,11 +21,11 @@ import java.util.function.Supplier;
 
 
 public class AcademyMenus {
-    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, AcademyCraft.MODID);
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, Static.MOD_ID);
 
-    public static final RegistryObject<MenuType<WindGenBaseMenu>> WIND_BASE_MENU = menu("wind_base_menu", () -> IForgeMenuType.create(WindGenBaseMenu::new));
-    public static final RegistryObject<MenuType<WindGenMainMenu>> WIND_MAIN_MENU = menu("wind_main_menu", () -> IForgeMenuType.create(WindGenMainMenu::new));
-    public static final RegistryObject<MenuType<NodeBasicMenu>> NODE_BASIC = menu("node_basic_menu", () -> IForgeMenuType.create(NodeBasicMenu::new));
+    public static RegistryObject<MenuType<WindGenBaseMenu>> WIND_BASE_MENU = menu("wind_base_menu", () -> IForgeMenuType.create(WindGenBaseMenu::new));
+    public static RegistryObject<MenuType<WindGenMainMenu>> WIND_MAIN_MENU = menu("wind_main_menu", () -> IForgeMenuType.create(WindGenMainMenu::new));
+    public static RegistryObject<MenuType<NodeBasicMenu>> NODE_BASIC = menu("node_basic_menu", () -> IForgeMenuType.create(NodeBasicMenu::new));
 
     @OnlyIn(Dist.CLIENT)
     public static void onClientSetup() {

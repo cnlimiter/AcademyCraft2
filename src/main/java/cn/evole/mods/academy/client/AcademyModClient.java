@@ -1,6 +1,10 @@
 package cn.evole.mods.academy.client;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.Static;
+import cn.evole.mods.academy.client.model.CatEngineModel;
+import cn.evole.mods.academy.client.render.CatEngineRender;
+import cn.evole.mods.academy.client.render.PhaseLiquidRender;
+import cn.evole.mods.academy.client.render.WindGenFanRender;
 import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
 import cn.evole.mods.academy.init.registry.AcademyEntities;
 import cn.evole.mods.academy.init.registry.AcademyMenus;
@@ -20,7 +24,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
  * @CreateTime: 2025/4/1 13:40
  * @Description:
  */
-@Mod.EventBusSubscriber(modid = AcademyCraft.MODID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = Static.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class AcademyModClient {
     @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
@@ -40,7 +44,14 @@ public class AcademyModClient {
 
     @SubscribeEvent
     public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(CatEngineModel.LAYER_LOCATION, CatEngineModel::createBodyLayer);
+    }
 
+    @SubscribeEvent
+    public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(AcademyBlockEntities.CAT_ENGINE.get(), CatEngineRender::new);
+        event.registerBlockEntityRenderer(AcademyBlockEntities.PHASE_LIQUID.get(), PhaseLiquidRender::new);
+        event.registerBlockEntityRenderer(AcademyBlockEntities.WINDGEN_FAN.get(), WindGenFanRender::new);
     }
 
     @SubscribeEvent

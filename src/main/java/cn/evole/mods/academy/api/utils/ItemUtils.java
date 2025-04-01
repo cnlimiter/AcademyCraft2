@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.api.utils;
 
+import cn.evole.mods.academy.Static;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
@@ -70,7 +72,7 @@ public class ItemUtils {
                 itemStack.setTag(nbt);
             } catch (Exception e) {
                 if (throwException) throw e;
-                LOGGER.error("Failed to parse NBT data", e);
+                Static.LOGGER.error("Failed to parse NBT data", e);
             }
         }
         return itemStack;
@@ -106,7 +108,7 @@ public class ItemUtils {
                 }
             }
         } catch (Exception e) {
-            LOGGER.error("Failed to deserialize item reward", e);
+            Static.LOGGER.error("Failed to deserialize item reward", e);
             itemStack = new ItemStack(Items.AIR);
         }
         return itemStack;
@@ -125,7 +127,7 @@ public class ItemUtils {
                 }
             }
         } catch (Exception e) {
-            LOGGER.error("Failed to serialize item reward", e);
+            Static.LOGGER.error("Failed to serialize item reward", e);
             json.addProperty("item", getId(Items.AIR));
             json.addProperty("count", 0);
         }
@@ -238,7 +240,7 @@ public class ItemUtils {
     /**
      * Drops an item with basic default random velocity.
      */
-    public static void dropItem(ItemStack stack, Level level, Vector3 dropLocation) {
+    public static void dropItem(ItemStack stack, Level level, Vec3 dropLocation) {
         ItemEntity item = new ItemEntity(level, dropLocation.x, dropLocation.y, dropLocation.z, stack);
         item.setDeltaMovement(level.random.nextGaussian() * 0.05, level.random.nextGaussian() * 0.05 + 0.2F, level.random.nextGaussian() * 0.05);
         level.addFreshEntity(item);

@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.init.registry;
 
-import cn.evole.mods.academy.AcademyCraft;
+import cn.evole.mods.academy.Static;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,11 +18,11 @@ import java.util.List;
  * @Description:
  */
 public class AcademyTabs {
-    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AcademyCraft.MODID);
+    public static final DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Static.MOD_ID);
     public static final List<RegistryObject<Item>> ACCEPT_ITEM = new ArrayList<>();
     public static final RegistryObject<CreativeModeTab> CREATIVE_TAB = TABS.register("academy_group", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.tab.Academy"))
-            .icon(() -> AcademyItems.CAT_ENGINE.get().getDefaultInstance())
+            .title(Component.translatable("itemGroup.academy"))
+            .icon(() -> AcademyItems.LOGO.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 for (var item : ACCEPT_ITEM){
                     output.accept(item.get());

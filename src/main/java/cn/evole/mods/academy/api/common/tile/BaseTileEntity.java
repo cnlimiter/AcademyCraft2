@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.api.common.tile;
 
-import committee.nova.mods.avaritia.api.utils.TileEntityUtils;
+import cn.evole.mods.academy.api.utils.TileEntityUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;

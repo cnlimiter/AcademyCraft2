@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.SolarGenBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -13,8 +14,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -23,7 +25,7 @@ import java.util.List;
 public class SolarGen extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public SolarGen() {
-        super(Properties.of(Material.STONE)
+        super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
@@ -50,12 +52,11 @@ public class SolarGen extends BaseEntityBlock {
     }
 
     @Override
-    public List<ItemStack> getDrops(BlockState p_60537_, LootContext.Builder p_60538_) {
+    public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.SOLAR_GEN.get()));
+            add(new ItemStack(AcademyBlocks.SOLAR_GEN.get()));
         }};
     }
-
     @Override
     public BlockState rotate(BlockState p_48722_, Rotation p_48723_) {
         return p_48722_.setValue(FACING, p_48723_.rotate(p_48722_.getValue(FACING)));

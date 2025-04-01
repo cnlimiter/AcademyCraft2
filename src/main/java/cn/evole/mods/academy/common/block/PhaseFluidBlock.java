@@ -13,14 +13,13 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.material.Material;
 import org.jetbrains.annotations.Nullable;
 
 public class PhaseFluidBlock extends LiquidBlock implements EntityBlock {
     public PhaseFluidBlock() {
         super(AcademyFluids.PHASE_LIQUID,
                 BlockBehaviour.Properties
-                        .of(Material.WATER)
+                        .of()
                         .noCollission()
                         .strength(100.0F)
                         .noLootTable()
@@ -43,13 +42,13 @@ public class PhaseFluidBlock extends LiquidBlock implements EntityBlock {
         return blockentity == null ? false : blockentity.triggerEvent(p_49229_, p_49230_);
     }
 
-    @javax.annotation.Nullable
+    @Nullable
     public MenuProvider getMenuProvider(BlockState p_49234_, Level p_49235_, BlockPos p_49236_) {
         BlockEntity blockentity = p_49235_.getBlockEntity(p_49236_);
         return blockentity instanceof MenuProvider ? (MenuProvider) blockentity : null;
     }
 
-    @javax.annotation.Nullable
+    @Nullable
     protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> p_152133_, BlockEntityType<E> p_152134_, BlockEntityTicker<? super E> p_152135_) {
         return p_152134_ == p_152133_ ? (BlockEntityTicker<A>) p_152135_ : null;
     }
