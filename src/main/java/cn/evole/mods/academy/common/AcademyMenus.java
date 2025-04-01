@@ -4,17 +4,18 @@ import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.menu.NodeBasicMenu;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;
 import cn.evole.mods.academy.common.menu.WindGenMainMenu;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraftforge.common.extensions.IForgeMenuType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.common.extensions.IMenuTypeExtension;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 
 public class AcademyMenus {
-    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, AcademyCraft.MODID);
+    public static final DeferredRegister<MenuType<?>> MENUS = DeferredRegister.create(Registries.MENU, AcademyCraft.MODID);
 
-    public static final RegistryObject<MenuType<WindGenBaseMenu>> WIND_BASE_MENU = MENUS.register("wind_base_menu", () -> IForgeMenuType.create(WindGenBaseMenu::new));
-    public static final RegistryObject<MenuType<WindGenMainMenu>> WIND_MAIN_MENU = MENUS.register("wind_main_menu", () -> IForgeMenuType.create(WindGenMainMenu::new));
-    public static final RegistryObject<MenuType<NodeBasicMenu>> NODE_BASIC = MENUS.register("node_basic_menu", () -> IForgeMenuType.create(NodeBasicMenu::new));
+    public static final DeferredHolder<MenuType<?>, MenuType<?>> WIND_BASE_MENU = MENUS.register("wind_base_menu", resourceLocation -> IMenuTypeExtension.create(WindGenBaseMenu::new));
+    public static final DeferredHolder<MenuType<?>, MenuType<?>> WIND_MAIN_MENU = MENUS.register("wind_main_menu", resourceLocation -> IMenuTypeExtension.create(WindGenMainMenu::new));
+    public static final DeferredHolder<MenuType<?>, MenuType<?>> NODE_BASIC = MENUS.register("node_basic_menu", resourceLocation -> IMenuTypeExtension.create(NodeBasicMenu::new));
 }

@@ -1,9 +1,10 @@
 package cn.evole.mods.academy;
 
 import cn.evole.mods.academy.common.*;
-import cn.evole.mods.academy.init.listener.CommonListener;
 import com.mojang.logging.LogUtils;
-import net.minecraftforge.fml.common.Mod;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.common.Mod;
 import org.slf4j.Logger;
 
 
@@ -12,17 +13,14 @@ public class AcademyCraft {
     public static final String MODID = "academy";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public AcademyCraft() {
-
-        CommonListener listener = CommonListener.getInstance();
-        listener.init();
-        AcademyMenus.MENUS.register(listener.getModEventBus());
-        AcademyItems.ITEMS.register(listener.getModEventBus());
-        AcademyBlocks.BLOCKS.register(listener.getModEventBus());
-        AcademyFluidTypes.FLUID_TYPES.register(listener.getModEventBus());
-        AcademyFluids.FLUIDS.register(listener.getModEventBus());
-        AcademyEntities.ENTITIES.register(listener.getModEventBus());
-        AcademyBlockEntities.BLOCK_ENTITIES.register(listener.getModEventBus());
+    public AcademyCraft(IEventBus modEventBus, ModContainer modContainer) {
+        AcademyMenus.MENUS.register(modEventBus);
+        AcademyItems.ITEMS.register(modEventBus);
+        AcademyBlocks.BLOCKS.register(modEventBus);
+        AcademyFluidTypes.FLUID_TYPES.register(modEventBus);
+        AcademyFluids.FLUIDS.register(modEventBus);
+        AcademyEntities.ENTITIES.register(modEventBus);
+        AcademyBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
     }
 

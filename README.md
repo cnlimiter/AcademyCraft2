@@ -5,7 +5,7 @@ A Minecraft mod about superability. The inspiration of AcademyCraft comes from [
 Issue(Idea, Bug) Submission
 ============
 
-Please go to [Issues](https://github.com/MohistMC/AcademyCraft/issues) and submit a new ticket.
+Please go to [Issues](https://github.com/cnlimiter/AcademyCraft2/issues) and submit a new ticket.
 
 Misc
 ====
