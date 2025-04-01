@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
-import cn.evole.mods.academy.common.AcademyCapability;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
+import cn.evole.mods.academy.init.registry.AcademyCapability;
+import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import cn.evole.mods.academy.common.capability.IIFCapability;
 import net.minecraft.core.BlockPos;

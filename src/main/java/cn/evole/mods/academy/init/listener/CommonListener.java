@@ -4,9 +4,9 @@ import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.client.gui.NodeBasicGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
-import cn.evole.mods.academy.common.AcademyBlocks;
-import cn.evole.mods.academy.common.AcademyItems;
-import cn.evole.mods.academy.common.AcademyMenus;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
+import cn.evole.mods.academy.init.registry.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyMenus;
 import cn.evole.mods.academy.common.block.*;
 import cn.evole.mods.academy.common.item.AppSettings;
 import cn.evole.mods.academy.common.item.Logo;
@@ -23,7 +23,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -83,14 +83,12 @@ public class CommonListener {
 
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            MenuScreens.register(AcademyMenus.WIND_BASE_MENU.get(), WindBaseGui::new);
-            MenuScreens.register(AcademyMenus.WIND_MAIN_MENU.get(), WindMainGui::new);
-            MenuScreens.register(AcademyMenus.NODE_BASIC.get(), NodeBasicGui::new);
+
         });
     }
 
 
-    private void addCreative(CreativeModeTabEvent.Register event) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
         event.registerCreativeModeTab(new ResourceLocation(AcademyCraft.MODID, "academy_group"), builder ->
                 builder.title(Component.translatable("itemGroup.academy"))
                         .icon(() -> new ItemStack(AcademyItems.LOGO.get()))

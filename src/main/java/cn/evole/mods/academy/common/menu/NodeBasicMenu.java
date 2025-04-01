@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.menu;
 
-import cn.evole.mods.academy.common.AcademyMenus;
+import cn.evole.mods.academy.init.registry.AcademyMenus;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 

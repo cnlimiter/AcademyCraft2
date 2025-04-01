@@ -5,7 +5,7 @@ import cn.evole.mods.academy.client.model.CatEngineModel;
 import cn.evole.mods.academy.client.render.CatEngineRender;
 import cn.evole.mods.academy.client.render.PhaseLiquidRender;
 import cn.evole.mods.academy.client.render.WindGenFanRender;
-import cn.evole.mods.academy.common.AcademyBlockEntities;
+import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
@@ -23,7 +23,6 @@ import org.slf4j.Logger;
 @Mod.EventBusSubscriber(modid = AcademyCraft.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientListener {
 
-    private static ClientListener INSTANCE = null;
     private static final Logger LOGGER = LogUtils.getLogger();
 
     @SubscribeEvent
@@ -47,9 +46,4 @@ public class ClientListener {
         event.registerBlockEntityRenderer(AcademyBlockEntities.WINDGEN_FAN.get(), WindGenFanRender::new);
     }
 
-
-    public static ClientListener getInstance() {
-        if (INSTANCE == null) INSTANCE = new ClientListener();
-        return INSTANCE;
-    }
 }

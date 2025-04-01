@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common;
+package cn.evole.mods.academy.init.registry;
 
 import cn.evole.mods.academy.AcademyCraft;
 import cn.evole.mods.academy.common.fluid.PhaseFluid;

@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.init.gen.provider;
 
 import cn.evole.mods.academy.AcademyCraft;
-import cn.evole.mods.academy.common.AcademyBlocks;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;

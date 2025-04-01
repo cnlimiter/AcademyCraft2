@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyFluids;
+import cn.evole.mods.academy.init.registry.AcademyFluids;
 import cn.evole.mods.academy.common.blockentity.PhaseLiquidBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.MenuProvider;

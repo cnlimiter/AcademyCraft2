@@ -1,9 +1,9 @@
 package cn.evole.mods.academy.common.fluid;
 
-import cn.evole.mods.academy.common.AcademyBlocks;
-import cn.evole.mods.academy.common.AcademyFluidTypes;
-import cn.evole.mods.academy.common.AcademyFluids;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
+import cn.evole.mods.academy.init.registry.AcademyFluidTypes;
+import cn.evole.mods.academy.init.registry.AcademyFluids;
+import cn.evole.mods.academy.init.registry.AcademyItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;

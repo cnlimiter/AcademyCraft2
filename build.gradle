@@ -91,8 +91,6 @@ mixin {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    mavenCentral()
-    mavenLocal()
     maven { url = "https://maven.covers1624.net/" }
     maven { url = 'https://maven.blamejared.com' }
     maven { url = 'https://maven.theillusivec4.top/' }
@@ -100,19 +98,20 @@ repositories {
     maven { url = "https://maven.architectury.dev" }
     maven { url = "https://maven.saps.dev/minecraft" }
     maven { url = 'https://www.jitpack.io' }
-    maven {
-        name 'IzzelAliz Maven'
-        url 'https://maven.izzel.io/releases/'
-    }
+    maven { url = "https://maven.terraformersmc.com/" }
     maven {
         name = 'Twilight Forest'
         url = 'https://modmaven.dev/'
     }
     maven {
-        url "https://www.cursemaven.com"
+        url = "https://www.cursemaven.com"
         content {
             includeGroup "curse.maven"
         }
+    }
+    maven {
+        name 'IzzelAliz Maven'
+        url 'https://maven.izzel.io/releases/'
     }
 }
 
@@ -123,12 +122,35 @@ dependencies {
     libraries "icyllis.modernui:ModernUI-Markdown:3.11.1"
     implementation fg.deobf("curse.maven:modern-ui-352491:5977000")
 
-    compileOnly fg.deobf("mezz.jei:jei-$minecraft_version-common-api:$jei_version")
-    compileOnly fg.deobf("mezz.jei:jei-$minecraft_version-forge-api:$jei_version")
-    runtimeOnly fg.deobf("mezz.jei:jei-$minecraft_version-forge:$jei_version")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
+
+    implementation fg.deobf("curse.maven:jade-324717:${jade_id}")
+
     compileOnly ("org.projectlombok:lombok:$lombok_version")
     annotationProcessor ("org.projectlombok:lombok:$lombok_version")
     annotationProcessor "org.spongepowered:mixin:$mixin_version:processor"
+
+    // compile against the JEI API but do not include it at runtime
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+
+    // REI
+    compileOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-api-forge:${project.rei_version}")
+    compileOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}")
+
+    // EMI
+    compileOnly fg.deobf("dev.emi:emi-forge:${emi_version}")
+
+    if (project.recipe_viewer == 'jei')
+        runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    else if (project.recipe_viewer == 'rei')
+        runtimeOnly fg.deobf("me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}")
+    else if (project.recipe_viewer == 'emi')
+        runtimeOnly fg.deobf("dev.emi:emi-forge:${project.emi_version}")
+    else
+        println("unknown recipe viewer: $recipe_viewer")
+
 
 }
 

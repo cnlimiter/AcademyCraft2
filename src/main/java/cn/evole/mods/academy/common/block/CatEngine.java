@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
+import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.CatEngineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;

@@ -1,10 +1,10 @@
 package cn.evole.mods.academy;
 
-import cn.evole.mods.academy.common.*;
+import cn.evole.mods.academy.init.registry.*;
 import com.mojang.logging.LogUtils;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 import org.slf4j.Logger;
 
 
@@ -13,7 +13,8 @@ public class AcademyCraft {
     public static final String MODID = "academy";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public AcademyCraft(IEventBus modEventBus, ModContainer modContainer) {
+    public AcademyCraft() {
+        var modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         AcademyMenus.MENUS.register(modEventBus);
         AcademyItems.ITEMS.register(modEventBus);
         AcademyBlocks.BLOCKS.register(modEventBus);

@@ -1,6 +1,6 @@
 package cn.evole.mods.academy.common.block;
 
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.NodeBasicBlockEntity;
 import cn.evole.mods.academy.common.menu.NodeBasicMenu;
 import io.netty.buffer.Unpooled;

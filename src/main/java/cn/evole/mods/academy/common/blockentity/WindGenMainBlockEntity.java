@@ -1,8 +1,8 @@
 package cn.evole.mods.academy.common.blockentity;
 
-import cn.evole.mods.academy.common.AcademyBlockEntities;
-import cn.evole.mods.academy.common.AcademyBlocks;
-import cn.evole.mods.academy.common.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
+import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.block.WindGenMain;
 import cn.evole.mods.academy.common.block.WindGenPillar;
 import net.minecraft.core.BlockPos;
