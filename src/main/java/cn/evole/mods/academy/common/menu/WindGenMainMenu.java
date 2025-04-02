@@ -6,6 +6,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class WindGenMainMenu extends AcademyMenu {
     public WindGenMainMenu(int windowId, Inventory inv, FriendlyByteBuf data) {
@@ -13,7 +14,7 @@ public class WindGenMainMenu extends AcademyMenu {
 
         addAcademySlot(new Slot(container, 0, 80, 0) {
             @Override
-            public boolean mayPlace(ItemStack item) {
+            public boolean mayPlace(@NotNull ItemStack item) {
                 return item.is(AcademyItems.WINDGEN_FAN.get());
             }
         });

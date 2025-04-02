@@ -9,12 +9,9 @@ Please go to [Issues](https://github.com/cnlimiter/AcademyCraft2/issues) and sub
 
 Misc
 ====
+## Plan
 
-## Donation
-
-You can support developement of AcademyCraft by donating. This will secure us more time to make the mod more intriguing!
-
-You would also be able to be in our donator list, both on website and in-game :beer:
+see [Plan](./plan)
 
 ## License
 

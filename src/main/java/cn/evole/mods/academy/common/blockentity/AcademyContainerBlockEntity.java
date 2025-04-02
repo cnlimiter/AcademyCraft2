@@ -1,6 +1,7 @@
 package cn.evole.mods.academy.common.blockentity;
 
 import cn.evole.mods.academy.common.menu.AcademyMenu;
+import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -12,7 +13,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 
+@Getter
 public abstract class AcademyContainerBlockEntity extends BlockEntity {
     private NonNullList<ItemStack> items = NonNullList.withSize(0, ItemStack.EMPTY);
     private AcademyMenu menu;
@@ -25,10 +28,6 @@ public abstract class AcademyContainerBlockEntity extends BlockEntity {
     public void load(CompoundTag tag) {
         super.load(tag);
         setItems(deserializeContentItems(tag));
-    }
-
-    public AcademyMenu getMenu() {
-        return menu;
     }
 
     @Override
@@ -60,10 +59,6 @@ public abstract class AcademyContainerBlockEntity extends BlockEntity {
         tag.put("contentItems", contentItems);
     }
 
-    public NonNullList<ItemStack> getItems() {
-        return this.items;
-    }
-
     public void setItems(NonNullList<ItemStack> items) {
         this.items = items;
         setChanged();
@@ -79,7 +74,7 @@ public abstract class AcademyContainerBlockEntity extends BlockEntity {
     }
 
     @Override
-    public CompoundTag getUpdateTag() {
+    public @NotNull CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
         serializeContentItems(tag);
         return tag;

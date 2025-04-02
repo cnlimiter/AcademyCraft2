@@ -32,16 +32,16 @@ public class AcademyBlocks {
     public static RegistryObject<Block> NODE_STANDARD = itemBlock("node_standard", NodeStandard::new);
     public static RegistryObject<Block> DEV_NORMAL = itemBlock("dev_normal", DevNormal::new);
     public static RegistryObject<Block> DEV_ADVANCED = itemBlock("dev_advanced", DevAdvanced::new);
-    public static RegistryObject<Block> DEV_NORMAL_SUB = itemBlock("dev_normal_sub", DevNormalSubBlock::new, false);
-    public static RegistryObject<Block> DEV_ADVANCED_SUB = itemBlock("dev_advanced_sub", DevAdvancedSubBlock::new, false);
-    public static RegistryObject<Block> WIND_GEN_BASE_SUB = itemBlock("windgen_base_sub", WindGenBaseSubBlock::new, false);
     public static RegistryObject<Block> MATRIX = itemBlock("matrix", Matrix::new);
-    public static RegistryObject<Block> MATRIX_SUB = itemBlock("matrix_sub", MatrixSubBlock::new, false);
     public static RegistryObject<Block> PHASE_GEN = itemBlock("phase_gen", PhaseGen::new);
     public static RegistryObject<Block> SOLAR_GEN = itemBlock("solar_gen", SolarGen::new);
     public static RegistryObject<Block> WINDGEN_BASE = itemBlock("windgen_base", WindGenBase::new);
     public static RegistryObject<Block> WINDGEN_MAIN = itemBlock("windgen_main", WindGenMain::new);
     public static RegistryObject<Block> WINDGEN_PILLAR = itemBlock("windgen_pillar", WindGenPillar::new);
+    public static RegistryObject<Block> DEV_NORMAL_SUB = itemBlock("dev_normal_sub", DevNormalSubBlock::new, false);
+    public static RegistryObject<Block> DEV_ADVANCED_SUB = itemBlock("dev_advanced_sub", DevAdvancedSubBlock::new, false);
+    public static RegistryObject<Block> WIND_GEN_BASE_SUB = itemBlock("windgen_base_sub", WindGenBaseSubBlock::new, false);
+    public static RegistryObject<Block> MATRIX_SUB = itemBlock("matrix_sub", MatrixSubBlock::new, false);
     public static RegistryObject<Block> WINDGEN_FAN = itemBlock("windgen_fan_block", WindGenFan::new, false);
     public static RegistryObject<Block> PHASE_LIQUID = itemBlock("phase_liquid", PhaseFluidBlock::new, false);
 

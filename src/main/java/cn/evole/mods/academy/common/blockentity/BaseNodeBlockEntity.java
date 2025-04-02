@@ -34,8 +34,6 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
     }
 
     public void tick() {
-
-
         Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
         if (optional.isPresent()) {
             Object cap = optional.get();
