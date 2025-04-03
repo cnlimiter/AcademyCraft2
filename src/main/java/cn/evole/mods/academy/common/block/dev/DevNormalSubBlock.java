@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.dev;
 
 import cn.evole.mods.academy.common.blockentity.DevNormalSubBlockEntity;
 import net.minecraft.core.BlockPos;

@@ -1,10 +1,10 @@
 package cn.evole.mods.academy.init.registry;
 
 import cn.evole.mods.academy.Static;
-import cn.evole.mods.academy.client.gui.NodeBasicGui;
+import cn.evole.mods.academy.client.gui.NodeGui;
 import cn.evole.mods.academy.client.gui.WindBaseGui;
 import cn.evole.mods.academy.client.gui.WindMainGui;
-import cn.evole.mods.academy.common.menu.NodeBasicMenu;
+import cn.evole.mods.academy.common.menu.NodeMenu;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;
 import cn.evole.mods.academy.common.menu.WindGenMainMenu;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -25,13 +25,13 @@ public class AcademyMenus {
 
     public static RegistryObject<MenuType<WindGenBaseMenu>> WIND_BASE_MENU = menu("wind_base_menu", () -> IForgeMenuType.create(WindGenBaseMenu::new));
     public static RegistryObject<MenuType<WindGenMainMenu>> WIND_MAIN_MENU = menu("wind_main_menu", () -> IForgeMenuType.create(WindGenMainMenu::new));
-    public static RegistryObject<MenuType<NodeBasicMenu>> NODE_BASIC = menu("node_basic_menu", () -> IForgeMenuType.create(NodeBasicMenu::new));
+    public static RegistryObject<MenuType<NodeMenu>> NODE_BASIC = menu("node_basic_menu", () -> IForgeMenuType.create(NodeMenu::new));
 
     @OnlyIn(Dist.CLIENT)
     public static void onClientSetup() {
         MenuScreens.register(AcademyMenus.WIND_BASE_MENU.get(), WindBaseGui::new);
         MenuScreens.register(AcademyMenus.WIND_MAIN_MENU.get(), WindMainGui::new);
-        MenuScreens.register(AcademyMenus.NODE_BASIC.get(), NodeBasicGui::new);
+        MenuScreens.register(AcademyMenus.NODE_BASIC.get(), NodeGui::new);
     }
 
     public static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> menu(String name, Supplier<? extends MenuType<T>> container) {

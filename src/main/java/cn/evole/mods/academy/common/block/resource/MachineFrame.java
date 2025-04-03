@@ -1,12 +1,10 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.resource;
 
 import cn.evole.mods.academy.init.registry.AcademyBlocks;
-import cn.evole.mods.academy.init.registry.AcademyItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 

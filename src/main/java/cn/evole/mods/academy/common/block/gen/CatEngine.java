@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.gen;
 
 import cn.evole.mods.academy.init.registry.AcademyBlockEntities;
 import cn.evole.mods.academy.init.registry.AcademyBlocks;

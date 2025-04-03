@@ -1,5 +1,6 @@
 package cn.evole.mods.academy.common.menu;
 
+import cn.evole.mods.academy.api.common.menu.BaseMenu;
 import cn.evole.mods.academy.common.blockentity.AcademyContainerBlockEntity;
 import cn.evole.mods.academy.common.container.AcademyMenuContainer;
 import net.minecraft.core.BlockPos;
@@ -13,29 +14,19 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public abstract class AcademyMenu extends AbstractContainerMenu {
+public abstract class AcademyMenu extends BaseMenu {
 
     public final Inventory inv;
     public final AcademyMenuContainer container = new AcademyMenuContainer(this);
     public BlockPos pos;
 
     public AcademyMenu(MenuType<?> menuType, int windowId, Inventory inv, FriendlyByteBuf data, boolean hasInventory) {
-        super(menuType, windowId);
+        super(menuType, windowId, inv);
         this.inv = inv;
         if (data != null)
             this.pos = data.readBlockPos();
         if (hasInventory) {
-            // 背包
-            for (int k = 0; k < 3; ++k) {
-                for (int i1 = 0; i1 < 9; ++i1) {
-                    this.addSlot(new Slot(inv, i1 + k * 9 + 9, 8 + i1 * 18, 94 + k * 18));
-                }
-            }
-
-            // 快捷栏
-            for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(inv, l, 8 + l * 18, 152));
-            }
+            createInventorySlots(inv, 0, 10);
         }
         container.reloadItems();
 

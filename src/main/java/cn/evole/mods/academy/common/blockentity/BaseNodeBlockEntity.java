@@ -1,11 +1,18 @@
 package cn.evole.mods.academy.common.blockentity;
 
+import cn.evole.mods.academy.api.common.tile.BaseInventoryTileEntity;
+import cn.evole.mods.academy.api.common.wrapper.ItemStackWrapper;
+import cn.evole.mods.academy.api.utils.lang.Localizable;
+import cn.evole.mods.academy.common.menu.NodeMenu;
 import cn.evole.mods.academy.init.registry.AcademyCapability;
 import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.capability.IFCapabilityImpl;
 import cn.evole.mods.academy.common.capability.IIFCapability;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -16,15 +23,35 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
-    public BaseNodeBlockEntity(BlockEntityType<?> p_155228_, BlockPos p_155229_, BlockState p_155230_) {
-        super(p_155228_, p_155229_, p_155230_);
+public abstract class BaseNodeBlockEntity extends BaseInventoryTileEntity {
+    private final ItemStackWrapper inventory;
+    public BaseNodeBlockEntity(BlockEntityType<?> entityType, BlockPos blockPos, BlockState blockState) {
+        super(entityType, blockPos, blockState);
+        this.inventory = new ItemStackWrapper(2, 1);
+        this.inventory.setOutputSlots(0);
+        this.inventory.setSlotValidator((slot, stack) -> {
+            if (slot == 0) return stack.is(AcademyItems.ENERGY_UNIT.get());
+            if (slot == 1) return stack.is(AcademyItems.ENERGY_UNIT.get()) || stack.is(AcademyItems.DEVELOPER_PORTABLE.get());
+            return false;
+        });
     }
 
     @Override
-    public int getContainerSize() {
-        return 2;
+    public @NotNull ItemStackWrapper getInventory() {
+        return inventory;
     }
+
+    @Override
+    public @NotNull Component getDisplayName() {
+        return Localizable.of("container.node").build();
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int windowId, @NotNull Inventory playerInventory) {
+        return new NodeMenu(windowId, playerInventory, this.inventory, this.getBlockPos());
+    }
+
 
     public abstract int getRange();
 
@@ -48,8 +75,7 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
     }
 
     private void updatePower(int i, int i1) {
-        if (getMenu() != null) {
-            ItemStack item = getMenu().container.getItem(i);
+            ItemStack item = getInventory().getStackInSlot(i);
             if (item.is(AcademyItems.ENERGY_UNIT.get()) || item.is(AcademyItems.DEVELOPER_PORTABLE.get())) {
                 Optional<?> optional = getCapability(AcademyCapability.IF_CAPABILITY).resolve();
                 if (optional.isPresent()) {
@@ -60,7 +86,6 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
                     }
                 }
             }
-        }
     }
 
     @Override
@@ -70,6 +95,6 @@ public abstract class BaseNodeBlockEntity extends AcademyContainerBlockEntity {
                     new IFCapabilityImpl(1)
             ).cast();
         }
-        return LazyOptional.empty();
+        return super.getCapability(cap, side);
     }
 }

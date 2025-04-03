@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.ore;
 
 import cn.evole.mods.academy.init.registry.AcademyFluids;
 import cn.evole.mods.academy.common.blockentity.PhaseLiquidBlockEntity;

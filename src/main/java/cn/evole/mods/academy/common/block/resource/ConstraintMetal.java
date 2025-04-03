@@ -1,35 +1,34 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.resource;
 
-import cn.evole.mods.academy.init.registry.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResoOre extends Block {
+public class ConstraintMetal extends Block {
 
-    public ResoOre() {
+    public ConstraintMetal() {
         super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
                 .strength(4.0f)
                 .requiresCorrectToolForDrops()
         );
+
     }
 
 
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.RESO_CRYSTAL.get()));
+            add(new ItemStack(AcademyBlocks.CONSTRAIN_METAL.get()));
         }};
     }
-
 
 }

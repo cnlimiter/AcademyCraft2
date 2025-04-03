@@ -9,10 +9,6 @@ public class NodeBasicBlockEntity extends BaseNodeBlockEntity {
         super(AcademyBlockEntities.NODE_BASIC.get(), p_155229_, p_155230_);
     }
 
-    @Override
-    public int getContainerSize() {
-        return 2;
-    }
 
     @Override
     public int getRange() {

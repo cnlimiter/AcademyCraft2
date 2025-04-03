@@ -1,4 +1,4 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.node;
 
 import cn.evole.mods.academy.common.blockentity.MatrixSubBlockEntity;
 import net.minecraft.core.BlockPos;

@@ -1,8 +1,7 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.dev;
 
 import cn.evole.mods.academy.init.registry.AcademyBlocks;
-import cn.evole.mods.academy.init.registry.AcademyItems;
-import cn.evole.mods.academy.common.blockentity.DevAdvancedBlockEntity;
+import cn.evole.mods.academy.common.blockentity.DevNormalBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,10 +21,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DevAdvanced extends BaseEntityBlock {
+public class DevNormal extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public DevAdvanced() {
+    public DevNormal() {
         super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
@@ -60,7 +58,7 @@ public class DevAdvanced extends BaseEntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState p_60569_, boolean p_60570_) {
         Direction direction = state.getValue(HorizontalDirectionalBlock.FACING).getOpposite();
-        Block subBlock = AcademyBlocks.DEV_ADVANCED_SUB.get();
+        Block subBlock = AcademyBlocks.DEV_NORMAL_SUB.get();
         switch (direction) {
             case NORTH -> {
                 level.setBlock(pos.north(1), subBlock.defaultBlockState(), 19);
@@ -131,7 +129,7 @@ public class DevAdvanced extends BaseEntityBlock {
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos neighbor, boolean p_60514_) {
         //Block block = level.getBlockState(pos).getBlock();
-        if ((block instanceof DevAdvancedSubBlock || block instanceof DevAdvanced) && level.getBlockState(neighbor).getBlock() instanceof AirBlock) {
+        if ((block instanceof DevNormalSubBlock || block instanceof DevNormal) && level.getBlockState(neighbor).getBlock() instanceof AirBlock) {
             level.destroyBlock(pos, false);
         }
         super.neighborChanged(state, level, pos, block, neighbor, p_60514_);
@@ -141,7 +139,7 @@ public class DevAdvanced extends BaseEntityBlock {
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyBlocks.DEV_ADVANCED.get()));
+            add(new ItemStack(AcademyBlocks.DEV_NORMAL.get()));
         }};
     }
     @Override
@@ -152,7 +150,7 @@ public class DevAdvanced extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-        return new DevAdvancedBlockEntity(p_153215_, p_153216_);
+        return new DevNormalBlockEntity(p_153215_, p_153216_);
     }
 
     @Override

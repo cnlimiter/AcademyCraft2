@@ -1,8 +1,7 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.dev;
 
 import cn.evole.mods.academy.init.registry.AcademyBlocks;
-import cn.evole.mods.academy.init.registry.AcademyItems;
-import cn.evole.mods.academy.common.blockentity.MatrixBlockEntity;
+import cn.evole.mods.academy.common.blockentity.DevAdvancedBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -23,10 +21,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Matrix extends BaseEntityBlock {
+public class DevAdvanced extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public Matrix() {
+    public DevAdvanced() {
         super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
@@ -60,27 +58,35 @@ public class Matrix extends BaseEntityBlock {
     @Override
     public void onPlace(BlockState state, Level level, BlockPos pos, BlockState p_60569_, boolean p_60570_) {
         Direction direction = state.getValue(HorizontalDirectionalBlock.FACING).getOpposite();
-        Block subBlock = AcademyBlocks.MATRIX_SUB.get();
+        Block subBlock = AcademyBlocks.DEV_ADVANCED_SUB.get();
         switch (direction) {
             case NORTH -> {
-                level.setBlock(pos.south(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.east(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.east(1).south(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.north(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.north(1).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.north(2), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.north(2).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.north(2).above(2), subBlock.defaultBlockState(), 19);
             }
             case SOUTH -> {
-                level.setBlock(pos.north(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.west(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.west(1).north(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.south(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.south(1).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.south(2), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.south(2).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.south(2).above(2), subBlock.defaultBlockState(), 19);
             }
             case WEST -> {
-                level.setBlock(pos.east(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.north(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.north(1).east(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.west(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.west(1).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.west(2), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.west(2).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.west(2).above(2), subBlock.defaultBlockState(), 19);
             }
             case EAST -> {
-                level.setBlock(pos.west(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.south(1), subBlock.defaultBlockState(), 19);
-                level.setBlock(pos.south(1).west(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.east(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.east(1).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.east(2), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.east(2).above(1), subBlock.defaultBlockState(), 19);
+                level.setBlock(pos.east(2).above(2), subBlock.defaultBlockState(), 19);
             }
         }
     }
@@ -90,24 +96,32 @@ public class Matrix extends BaseEntityBlock {
         Direction direction = state.getValue(HorizontalDirectionalBlock.FACING).getOpposite();
         switch (direction) {
             case NORTH -> {
-                level.destroyBlock(pos.south(1), false);
-                level.destroyBlock(pos.east(1), false);
-                level.destroyBlock(pos.east(1).south(1), false);
+                level.destroyBlock(pos.north(1), false);
+                level.destroyBlock(pos.north(1).above(1), false);
+                level.destroyBlock(pos.north(2), false);
+                level.destroyBlock(pos.north(2).above(1), false);
+                level.destroyBlock(pos.north(2).above(2), false);
             }
             case SOUTH -> {
-                level.destroyBlock(pos.north(1), false);
-                level.destroyBlock(pos.west(1), false);
-                level.destroyBlock(pos.west(1).north(1), false);
+                level.destroyBlock(pos.south(1), false);
+                level.destroyBlock(pos.south(1).above(1), false);
+                level.destroyBlock(pos.south(2), false);
+                level.destroyBlock(pos.south(2).above(1), false);
+                level.destroyBlock(pos.south(2).above(2), false);
             }
             case WEST -> {
-                level.destroyBlock(pos.east(1), false);
-                level.destroyBlock(pos.north(1), false);
-                level.destroyBlock(pos.north(1).east(1), false);
+                level.destroyBlock(pos.west(1), false);
+                level.destroyBlock(pos.west(1).above(1), false);
+                level.destroyBlock(pos.west(2), false);
+                level.destroyBlock(pos.west(2).above(1), false);
+                level.destroyBlock(pos.west(2).above(2), false);
             }
             case EAST -> {
-                level.destroyBlock(pos.west(1), false);
-                level.destroyBlock(pos.south(1), false);
-                level.destroyBlock(pos.south(1).west(1), false);
+                level.destroyBlock(pos.east(1), false);
+                level.destroyBlock(pos.east(1).above(1), false);
+                level.destroyBlock(pos.east(2), false);
+                level.destroyBlock(pos.east(2).above(1), false);
+                level.destroyBlock(pos.east(2).above(2), false);
             }
         }
     }
@@ -115,16 +129,17 @@ public class Matrix extends BaseEntityBlock {
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos neighbor, boolean p_60514_) {
         //Block block = level.getBlockState(pos).getBlock();
-        if ((block instanceof MatrixSubBlock) && level.getBlockState(neighbor).getBlock() instanceof AirBlock) {
+        if ((block instanceof DevAdvancedSubBlock || block instanceof DevAdvanced) && level.getBlockState(neighbor).getBlock() instanceof AirBlock) {
             level.destroyBlock(pos, false);
         }
         super.neighborChanged(state, level, pos, block, neighbor, p_60514_);
     }
 
+
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyBlocks.DEV_NORMAL.get()));
+            add(new ItemStack(AcademyBlocks.DEV_ADVANCED.get()));
         }};
     }
     @Override
@@ -135,7 +150,7 @@ public class Matrix extends BaseEntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-        return new MatrixBlockEntity(p_153215_, p_153216_);
+        return new DevAdvancedBlockEntity(p_153215_, p_153216_);
     }
 
     @Override

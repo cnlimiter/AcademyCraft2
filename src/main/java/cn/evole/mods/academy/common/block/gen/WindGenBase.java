@@ -1,7 +1,6 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.gen;
 
 import cn.evole.mods.academy.init.registry.AcademyBlocks;
-import cn.evole.mods.academy.init.registry.AcademyItems;
 import cn.evole.mods.academy.common.blockentity.AcademyContainerBlockEntity;
 import cn.evole.mods.academy.common.blockentity.WindGenBaseBlockEntity;
 import cn.evole.mods.academy.common.menu.WindGenBaseMenu;
@@ -29,7 +28,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;

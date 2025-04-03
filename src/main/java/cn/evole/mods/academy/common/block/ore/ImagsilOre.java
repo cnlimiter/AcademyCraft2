@@ -1,20 +1,19 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.ore;
 
-import cn.evole.mods.academy.init.registry.AcademyItems;
+import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CrystalOre extends Block {
+public class ImagsilOre extends Block {
 
-    public CrystalOre() {
+    public ImagsilOre() {
         super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
@@ -23,12 +22,10 @@ public class CrystalOre extends Block {
         );
 
     }
-
-
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyItems.CRYSTAL_LOW.get()));
+            add(new ItemStack(AcademyBlocks.IMAGSIL_ORE.get()));
         }};
     }
 

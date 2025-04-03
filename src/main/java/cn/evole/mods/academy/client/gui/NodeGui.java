@@ -1,7 +1,7 @@
 package cn.evole.mods.academy.client.gui;
 
 import cn.evole.mods.academy.Static;
-import cn.evole.mods.academy.common.menu.BaseNodeMenu;
+import cn.evole.mods.academy.common.menu.NodeMenu;
 import cn.evole.mods.academy.utils.RenderUtils;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -9,14 +9,14 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public abstract class BaseNodeGui<T extends BaseNodeMenu> extends AcademyBaseUI<T> {
+public class NodeGui extends AcademyBaseUI<NodeMenu> {
 
     private static final ResourceLocation UI_NODE = new ResourceLocation(Static.MOD_ID, "textures/guis/ui/ui_node.png");
     private static final ResourceLocation EFFECT_NODE = new ResourceLocation(Static.MOD_ID, "textures/guis/effect/effect_node.png");
     private boolean connected = false;
 
-    public BaseNodeGui(T t, Inventory inv, Component p_97743_) {
-        super(t, inv, p_97743_);
+    public NodeGui(NodeMenu nodeBasicMenu , Inventory inv, Component p_97743_) {
+        super(nodeBasicMenu, inv, p_97743_);
     }
 
 

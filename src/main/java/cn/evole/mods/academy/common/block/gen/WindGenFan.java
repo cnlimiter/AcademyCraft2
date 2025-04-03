@@ -1,8 +1,7 @@
-package cn.evole.mods.academy.common.block;
+package cn.evole.mods.academy.common.block.gen;
 
-import cn.evole.mods.academy.init.registry.AcademyBlocks;
 import cn.evole.mods.academy.init.registry.AcademyItems;
-import cn.evole.mods.academy.common.blockentity.WindGenPillarBlockEntity;
+import cn.evole.mods.academy.common.blockentity.WindGenFanBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
@@ -14,7 +13,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootParams;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -22,39 +20,40 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WindGenPillar extends BaseEntityBlock {
+public class WindGenFan extends BaseEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public WindGenPillar() {
+    public WindGenFan() {
         super(Properties.of()
                 .sound(SoundType.STONE)
                 .noOcclusion()
-                .strength(4.0f)
-                .requiresCorrectToolForDrops()
+                .instabreak()
         );
         this.registerDefaultState(this.getStateDefinition().any()
                 .setValue(FACING, Direction.NORTH));
     }
 
     @Override
-    public void animateTick(BlockState p_220827_, Level p_220828_, BlockPos p_220829_, RandomSource p_220830_) {
+    public void animateTick(BlockState state, Level p_220828_, BlockPos p_220829_, RandomSource p_220830_) {
 
     }
+
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos p_153215_, BlockState p_153216_) {
-        return new WindGenPillarBlockEntity(p_153215_, p_153216_);
+        return new WindGenFanBlockEntity(p_153215_, p_153216_);
     }
 
     @Override
     public RenderShape getRenderShape(BlockState p_49232_) {
         return RenderShape.MODEL;
     }
+
     @Override
     public @NotNull List<ItemStack> getDrops(@NotNull BlockState pState, LootParams.@NotNull Builder pParams) {
         return new ArrayList<>() {{
-            add(new ItemStack(AcademyBlocks.WINDGEN_PILLAR.get()));
+            add(new ItemStack(AcademyItems.WINDGEN_FAN.get()));
         }};
     }
     @Override
@@ -78,5 +77,6 @@ public class WindGenPillar extends BaseEntityBlock {
     public BlockState getStateForPlacement(BlockPlaceContext p_49820_) {
         return this.defaultBlockState().setValue(FACING, p_49820_.getHorizontalDirection().getOpposite());
     }
+
 
 }
